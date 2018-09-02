@@ -1,0 +1,1 @@
+<div class="add_menu_item_wrapper" data-id="{{ $id ?? $name }}" data-add-menu-link></div>
