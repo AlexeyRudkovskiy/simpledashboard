@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31dc0013-4fc0-4773-ab61-a6dac034e37d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +35,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            <state relative-caret-position="300">
+              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018_06_02_000000_create_files_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2018_06_02_000000_create_files_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layout/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="113" column="24" lean-forward="true" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -105,7 +123,6 @@
         <option value="$PROJECT_DIR$/resources/lang/ua/dashboard.php" />
         <option value="$PROJECT_DIR$/src/Entities/CategoryEntity.php" />
         <option value="$PROJECT_DIR$/resources/views/media/index.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2018_06_02_000000_create_files_table.php" />
         <option value="$PROJECT_DIR$/src/Models/File.php" />
         <option value="$PROJECT_DIR$/src/Services/LengthAwarePaginator.php" />
         <option value="$PROJECT_DIR$/resources/views/crud/index.blade.php" />
@@ -152,6 +169,7 @@
         <option value="$PROJECT_DIR$/resources/assets/js/typescript/wysiwyg/gallery.ts" />
         <option value="$PROJECT_DIR$/resources/assets/js/typescript/wysiwyg/editor.ts" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_06_02_000000_create_files_table.php" />
       </list>
     </option>
   </component>
@@ -228,6 +246,43 @@
               <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
               <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="tk-admin.dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tk-admin.dev" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -235,7 +290,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="gallery.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/gallery.ts&#10;file-type&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/modules/file-type.ts&#10;file.blade.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/file.blade.php&#10;wys.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/fields/_wysiwyg.scss&#10;editor.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/editor.ts&#10;Wysfiel&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/EntityFields/WYSIWYGField.php&#10;gall-add&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/floating_actions/gallery-add.ts&#10;media.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/_media.scss&#10;wid/file.bla&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/file.blade.php&#10;FileField&#9;null&#9;null&#10;MediaController&#9;null&#9;null&#10;File&#9;null&#9;null&#10;file-pop&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/popups/file-popup.ts&#10;action-media&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts&#10;popup.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/_popups.scss&#10;popupsi&#9;null&#9;null&#10;vari.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/_variables.scss&#10;Filepop&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/popups/file-popup.ts&#10;action-med&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts&#10;gall.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/gallery.ts&#10;galle.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/floating_actions/gallery-delete-item.ts&#10;dashboa.blade&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/layout/dashboard.blade.php&#10;wys.blade&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/wysiwyg.blade.php&#10;UploadFile&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Services/UploadFile.php&#10;web.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/routes/web.php&#10;action-link&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-link-create.ts&#10;main.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/main.ts&#10;action-medi&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts&#10;UploadFIle&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Services/UploadFile.php&#10;Menu&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Models/Menu.php&#10;menuitem&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/vue-components/MenuItem.vue&#10;addmenuitem&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/vue-components/AddMenuItem.vue&#10;MenuField&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/vue-components/MenuField.vue&#10;wi/menu&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/menu.blade.php&#10;MenuController&#9;null&#9;null&#10;config.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/config/config.php&#10;Paginat&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Services/Paginator.php&#10;crud/index.blade&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/crud/index.blade.php&#10;crudcontroller&#9;null&#9;null&#10;CategorField&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/EntityFields/CategoriesField.php&#10;AbstractEnt&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Contracts/AbstractEntity.php&#10;CrudController&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Http/Controllers/CrudController.php&#10;create_files&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/database/migrations/2018_06_02_000000_create_files_table.php&#10;composer.json&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/composer.json&#10;media/index&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/media/index.blade.php&#10;UploadFil&#9;null&#9;null&#10;AdminServicePRo&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/ServiceProviders/AdminServiceProvider.php&#10;Category&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Entities/CategoryEntity.php&#10;dashbo.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/lang/ua/dashboard.php&#10;dashboard.b&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/layout/dashboard.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="create_file&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/database/migrations/2018_06_02_000000_create_files_table.php&#10;dashboard.blade.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/layout/dashboard.blade.php&#10;gallery.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/gallery.ts&#10;file-type&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/modules/file-type.ts&#10;file.blade.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/file.blade.php&#10;wys.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/fields/_wysiwyg.scss&#10;editor.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/editor.ts&#10;Wysfiel&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/EntityFields/WYSIWYGField.php&#10;gall-add&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/floating_actions/gallery-add.ts&#10;media.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/_media.scss&#10;wid/file.bla&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/file.blade.php&#10;FileField&#9;null&#9;null&#10;MediaController&#9;null&#9;null&#10;File&#9;null&#9;null&#10;file-pop&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/popups/file-popup.ts&#10;action-media&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts&#10;popup.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/_popups.scss&#10;popupsi&#9;null&#9;null&#10;vari.scss&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/css/scss/_variables.scss&#10;Filepop&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/popups/file-popup.ts&#10;action-med&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts&#10;gall.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/gallery.ts&#10;galle.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/floating_actions/gallery-delete-item.ts&#10;dashboa.blade&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/layout/dashboard.blade.php&#10;wys.blade&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/wysiwyg.blade.php&#10;UploadFile&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Services/UploadFile.php&#10;web.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/routes/web.php&#10;action-link&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-link-create.ts&#10;main.ts&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/main.ts&#10;action-medi&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts&#10;UploadFIle&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Services/UploadFile.php&#10;Menu&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Models/Menu.php&#10;menuitem&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/vue-components/MenuItem.vue&#10;addmenuitem&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/vue-components/AddMenuItem.vue&#10;MenuField&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/assets/js/typescript/vue-components/MenuField.vue&#10;wi/menu&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/form/widget/menu.blade.php&#10;MenuController&#9;null&#9;null&#10;config.php&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/config/config.php&#10;Paginat&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Services/Paginator.php&#10;crud/index.blade&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/crud/index.blade.php&#10;crudcontroller&#9;null&#9;null&#10;CategorField&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/EntityFields/CategoriesField.php&#10;AbstractEnt&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Contracts/AbstractEntity.php&#10;CrudController&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Http/Controllers/CrudController.php&#10;create_files&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/database/migrations/2018_06_02_000000_create_files_table.php&#10;composer.json&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/composer.json&#10;media/index&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/resources/views/media/index.blade.php&#10;UploadFil&#9;null&#9;null&#10;AdminServicePRo&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/ServiceProviders/AdminServiceProvider.php&#10;Category&#9;FILE&#9;file:///Users/alexey/PhpstormProjects/tk-admin.dev/src/Entities/CategoryEntity.php" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)&#10;MySQL" />
     <property name="js.last.introduce.type" value="CONST" />
@@ -310,12 +365,12 @@
       <workItem from="1535297883125" duration="12231000" />
       <workItem from="1535545174005" duration="12929000" />
       <workItem from="1535635420694" duration="15151000" />
-      <workItem from="1535916169347" duration="50000" />
+      <workItem from="1535916169347" duration="903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209083000" />
+    <option name="totallyTimeSpent" value="209936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="994" extended-state="0" />
@@ -326,7 +381,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="4" weight="0.32998884" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3522854" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3522854" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
@@ -381,30 +436,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/typescript/wysiwyg/toolbar-actions/action-media.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/js/typescript/wysiwyg/gallery.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Contracts/EntityField.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="87" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/assets/js/typescript/wysiwyg/editor.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2310">
@@ -503,13 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layout/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -735,10 +759,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/Role.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_06_01_000000_create_roles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        <state relative-caret-position="300">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layout/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="113" column="24" lean-forward="true" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_06_02_000000_create_files_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
         </state>
       </provider>
     </entry>

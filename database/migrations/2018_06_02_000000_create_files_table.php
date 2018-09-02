@@ -21,7 +21,7 @@ class CreateFilesTable extends Migration
             $table->string('type', 16)->nullable();
             $table->string('extension', 8)->nullable();
             $table->integer('size', false, true)->default(0);
-            $table->json('thumbnails')->default('{}');
+            $table->json('thumbnails');
             $table->string('folder')->nullable();
 
             $table->timestamps();
