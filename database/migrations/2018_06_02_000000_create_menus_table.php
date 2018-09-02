@@ -32,7 +32,7 @@ class CreateMenusTable extends Migration
         });
 
         Schema::create('menuables', function (Blueprint $table) {
-            $table->integer('menu_id');
+            $table->integer('menu_id', false , true);
             $table->morphs('menuable');
 
             $table->foreign('menu_id')->references('id')->on('menus');

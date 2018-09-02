@@ -29,8 +29,10 @@ class CreateCategoriesTable extends Migration
         });
 
         Schema::create('categoriables', function (Blueprint $table) {
-            $table->integer('category_id');
+            $table->integer('category_id', false, true);
             $table->morphs('categoriable');
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
