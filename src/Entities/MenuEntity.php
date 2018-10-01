@@ -12,8 +12,10 @@ namespace ARudkovskiy\Admin\Entities;
 use ARudkovskiy\Admin\Contracts\AbstractEntity;
 use ARudkovskiy\Admin\EntityFields\AddMenuItemField;
 use ARudkovskiy\Admin\EntityFields\CategoriesField;
+use ARudkovskiy\Admin\EntityFields\EnumField;
 use ARudkovskiy\Admin\EntityFields\IdField;
 use ARudkovskiy\Admin\EntityFields\MenuField;
+use ARudkovskiy\Admin\EntityFields\NumberField;
 use ARudkovskiy\Admin\EntityFields\TextField;
 use ARudkovskiy\Admin\Models\Menu;
 
@@ -37,8 +39,24 @@ class MenuEntity extends AbstractEntity
                 ->setOptions([
                     'location' => 'sidebar'
                 ]),
-            TextField::create('location')
-                ->setOptions([ 'location' => 'sidebar' ]),
+            EnumField::create('location', null, function ($value) {
+                return trans('@admin::dashboard.entity.menu.locations.' . $value);
+            })
+                ->setOptions([ 'location' => 'sidebar' ])
+                ->setElements([
+                    'header' => trans('@admin::dashboard.entity.menu.locations.header'),
+                    'left-sidebar' => trans('@admin::dashboard.entity.menu.locations.left-sidebar'),
+                    'right-sidebar' => trans('@admin::dashboard.entity.menu.locations.right-sidebar')
+                ])
+                ->showInIndexTable()
+                ->setOrderInIndexTable(2)
+                ->setWidth(175),
+            NumberField::create('order')
+                ->setOptions([ 'location' => 'sidebar' ])
+                ->setDefault(100)
+                ->showInIndexTable()
+                ->setWidth(125)
+                ->setOrderInIndexTable(3),
             TextField::create('tag')
                 ->setOptions([ 'location' => 'sidebar' ])
         ];

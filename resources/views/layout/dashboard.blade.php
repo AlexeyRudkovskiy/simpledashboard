@@ -19,6 +19,8 @@
     <![endif]-->
 
     <meta name="csrf_token" content="{{ csrf_token() }}" />
+
+    @stack('styles')
 </head>
 
 <body class="fix-header fix-sidebar" id="vue-app">
@@ -26,24 +28,17 @@
     <div class="header">
         <nav class="navbar top-navbar navbar-expand-md navbar-light">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/admin/">
-                    <b><img src="{{ asset('arudkovskiy/admin/images/logo.png') }}" alt="homepage" class="dark-logo" /></b>
-                    <span><img src="{{ asset('arudkovskiy/admin/images/logo-text.png') }}" alt="homepage" class="dark-logo" /></span>
-                </a>
+                <div style="height: 60px;"></div>
             </div>
             <div class="navbar-collapse">
                 <ul class="navbar-nav mr-auto mt-md-0">
                 </ul>
                 <ul class="navbar-nav my-lg-0">
-                    <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted  " href="javascript:void(0)"><i class="ti-search"></i></a>
-                        <form class="app-search">
-                            <input type="text" class="form-control" placeholder="Search here"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                    </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="" alt="user" class="profile-pic" /></a>
+                        <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ $administrator->full_name }}</a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <ul class="dropdown-user">
-                                <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                <li><a href="{{ route('admin.sign_out') }}">Вийти</a></li>
                             </ul>
                         </div>
                     </li>

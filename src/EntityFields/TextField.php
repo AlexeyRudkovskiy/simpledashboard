@@ -18,10 +18,29 @@ class TextField extends EntityField
 
     protected $type = 'text';
 
+    protected $default = null;
+
     public function renderEditable()
     {
         return parent::renderEditable()
             ->with('type', $this->type);
+    }
+
+    /**
+     * @return null
+     */
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+    /**
+     * @param null $default
+     */
+    public function setDefault($default)
+    {
+        $this->default = $default;
+        return $this;
     }
 
 }

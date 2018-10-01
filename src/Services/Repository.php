@@ -105,4 +105,15 @@ class Repository
         return $this;
     }
 
+    public function findLike($field, $query)
+    {
+        $entityClass = $this->entity->getEntityClass();
+        $tempObject = new $entityClass;
+        $objects = $tempObject->where($field, 'like', '%' . $query . '%')
+            ->limit(15)
+            ->get();
+
+        return $objects;
+    }
+
 }

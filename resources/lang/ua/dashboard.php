@@ -60,7 +60,13 @@ return [
                 'items' => 'Пункти меню',
                 'categories' => 'Категорії',
                 'location' => 'Розположення',
-                'tag' => 'Ідентифікатор'
+                'tag' => 'Ідентифікатор',
+                'order' => 'Позиція'
+            ],
+            'locations' => [
+                'header' => 'Верхнє меню',
+                'left-sidebar' => 'Ліве меню',
+                'right-sidebar' => 'Праве меню'
             ]
         ],
         'category' => [

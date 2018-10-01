@@ -131,6 +131,10 @@ class MediaController
             array_push($uploadedFiles, $processed);
         }
 
+        if ($request->has('redirect_back')) {
+            return redirect()->back();
+        }
+
         return $uploadedFiles;
     }
 

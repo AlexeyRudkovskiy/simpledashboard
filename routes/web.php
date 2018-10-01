@@ -26,6 +26,9 @@ Route::middleware([
         Route::get('/config', 'ConfigController@index')->name('config.index');
         Route::post('/config', 'ConfigController@save')->name('config.save');
 
+        Route::get('/sign-out', 'DashboardController@signOut')->name('sign_out');
+        Route::get('/select2', 'DashboardController@select2')->name('select2');
+
         // CRUD stuff
         Route::prefix('entity')
             ->group(function () {
@@ -50,6 +53,8 @@ Route::middleware([
                 Route::get('/', 'FileManagerController@index')->name('files.index');
                 Route::get('/directory', 'FileManagerController@getDirectoryInfo')->name('files.directory');
                 Route::post('/delete', 'FileManagerController@delete')->name('files.delete');
+                Route::post('/rename', 'FileManagerController@rename')->name('files.rename');
+                Route::post('/upload', 'FileManagerController@upload')->name('files.upload');
             });
 
         Route::prefix('api')

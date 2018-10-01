@@ -15,10 +15,18 @@
                     <li class="breadcrumb-item"><a href="{{ route('admin.media.index', [ 'folder' => $breadcrumb['full'] ]) }}">{{ $breadcrumb['short'] }}</a></li>
                 @endforeach
             </ul>
-            <ul class="media-basic-actions">
-                <li><a href="javascript:">create folder</a></li>
-                <li><a href="javascript:">upload file</a></li>
-            </ul>
+            <div class="media-upload-container">
+                <form method="post" action="{{ route('admin.media.upload') }}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <input type="file" name="file[]" />
+                    <input type="hidden" name="redirect_back" value="1" />
+                    <input type="submit" />
+                </form>
+            </div>
+            {{--<ul class="media-basic-actions">--}}
+                {{--<li><a href="javascript:">create folder</a></li>--}}
+                {{--<li><a href="javascript:">upload file</a></li>--}}
+            {{--</ul>--}}
         </div>
 
         <div class="media-grid">
@@ -35,11 +43,5 @@
             @endspaceless
         </div>
     </div>
-
-    <form method="post" action="{{ route('admin.media.upload') }}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <input type="file" name="file[]" />
-        <input type="submit" />
-    </form>
 
 @endsection

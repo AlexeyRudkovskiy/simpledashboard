@@ -9,7 +9,9 @@
 namespace ARudkovskiy\Admin\Http\Controllers;
 
 
+use ARudkovskiy\Admin\Container\AdminContainerInterface;
 use ARudkovskiy\Admin\Models\User;
+use ARudkovskiy\Admin\Services\Repository;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -36,7 +38,43 @@ class DashboardController extends Controller
                 return redirect($redirectTo);
             }
             return redirect()->route('admin.dashboard');
+        } else {
+            return redirect()->back();
         }
     }
 
+    public function signOut()
+    {
+        session()->flush();
+        return redirect()->back();
+    }
+
+    public function select2(Request $request)
+    {
+        if (strlen($request->get('q')) < 1) {
+            return [
+                'results' => []
+            ];
+        }
+
+        $adminContainer = app()->make(AdminContainerInterface::class);
+        $field = $request->get('value');
+        $id = $request->get('id');
+        $entityName = $request->get('entity');
+        $entity = $adminContainer->getEntity($entityName);
+        $repository = new Repository($entity);
+        $objects = $repository->findLike($field, $request->get('q'));
+
+        $objects = $objects->map(function ($object) use ($id, $field) {
+            return [
+                'id' => $object->{$id},
+                'text' => $object->{$field}
+            ];
+        });
+
+        return [
+            'results' => $objects
+        ];
+    }
+    
 }

@@ -8,6 +8,7 @@
 
 namespace ARudkovskiy\Admin\Contracts;
 
+use ARudkovskiy\Admin\EntityFields\FileField;
 use ARudkovskiy\Admin\EntityFields\IdField;
 use ARudkovskiy\Admin\EntityFields\SimpleRelationField;
 use ARudkovskiy\Admin\Events\EntitySaved;
@@ -142,9 +143,16 @@ abstract class AbstractEntity implements Entity
                 }
             } else if ($field->isUpdatingManually()) {
                 $updatableField = $field->getManuallyUpdatableField();
+//                if ($field instanceof FileField) {
+//                    dd($updatableField, $object->{$field->getName()});
+//                }
                 $value = $updatableField === null ?
                     $object->{$field->getName()} :
-                    $object->{$field->getName()}->{$updatableField};
+                    (
+                    $object->{$field->getName()} !== null ?
+                        $object->{$field->getName()}->{$updatableField} :
+                        null
+                    );
             } else {
                 $value = array_has($data, $fieldName) ? array_get($data, $fieldName) : null;
             }

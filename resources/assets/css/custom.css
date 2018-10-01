@@ -484,6 +484,8 @@
     padding-left: 0;
     padding-right: 0;
     padding-top: 0; }
+  .media-container .media-container-header .media-upload-container {
+    margin-left: auto; }
   .media-container .media-container-header .media-basic-actions {
     display: flex;
     margin-left: auto; }
@@ -660,6 +662,13 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
     border-radius: 3px;
     overflow: hidden; }
+    .file-manager .file-manager-files .uploading {
+      padding: 12px;
+      font-size: 0.8rem;
+      background-color: rgba(0, 0, 0, 0.02);
+      box-sizing: border-box; }
+      .file-manager .file-manager-files .uploading .uploading-progress {
+        margin-top: 8px; }
     .file-manager .file-manager-files .file-container {
       border: 1px solid transparent;
       padding: 12px;
@@ -685,6 +694,14 @@
         margin-top: -1px;
         position: relative;
         top: 1px; }
+      .file-manager .file-manager-files .file-container .file-rename-apply {
+        margin-left: 8px;
+        margin-right: 8px; }
+        .file-manager .file-manager-files .file-container .file-rename-apply i {
+          opacity: 0.6;
+          color: #27ae60; }
+        .file-manager .file-manager-files .file-container .file-rename-apply:hover i {
+          opacity: 1; }
       .file-manager .file-manager-files .file-container .file-size {
         margin-left: 8px; }
       .file-manager .file-manager-files .file-container .file-actions {

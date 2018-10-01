@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('arudkovskiy/admin/images/favicon.png') }}">
-    <title>Ela - Bootstrap Admin Dashboard Template</title>
+    <title>Авторизація</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('arudkovskiy/admin/css/lib/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -36,7 +36,6 @@
                 <div class="col-lg-5 col-xl-3 col-sm-4">
                     <div class="login-content card">
                         <div class="login-form">
-                            <h4>Login</h4>
                             <form method="post" action="{{ route('admin.signin') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
@@ -58,11 +57,6 @@
                                            id="password"
                                            placeholder="{{ trans('@admin::dashboard.auth.password') }}"
                                     />
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox"> {{ trans('@admin::dashboard.auth.remember_me') }}
-                                    </label>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">{{ trans('@admin::dashboard.auth.sign_in') }}</button>
                             </form>

@@ -20,6 +20,18 @@
     border-radius: 3px;
     overflow: hidden;
 
+    .uploading {
+      padding: $default-padding / 4 * 3;
+      font-size: 0.8rem;
+      background-color: rgba(black, 0.02);
+
+      box-sizing: border-box;
+
+      .uploading-progress {
+        margin-top: $default-padding / 2;
+      }
+    }
+
     .file-container {
       border: 1px solid transparent;
       padding: $default-padding / 4 * 3;
@@ -60,6 +72,22 @@
           margin-top: -1px;
           position: relative;
           top: 1px;
+        }
+      }
+
+      .file-rename-apply {
+        margin-left: $default-padding / 2;
+        margin-right: $default-padding / 2;
+
+        i {
+          opacity: 0.6;
+          color: #27ae60;
+        }
+
+        &:hover {
+          i {
+            opacity: 1;
+          }
         }
       }
 

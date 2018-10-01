@@ -11,6 +11,7 @@ namespace ARudkovskiy\Admin\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 
 class FileManagerController extends Controller
@@ -41,7 +42,11 @@ class FileManagerController extends Controller
 
         if ($isNotRootFolder) {
             $parentFolder = explode('/', $folder);
-            array_pop($parentFolder);
+
+            $lastItem = array_pop($parentFolder);
+            if (empty($lastItem)) {
+                array_pop($parentFolder);
+            }
             array_shift($parentFolder);
             array_shift($parentFolder);
             $parentFolder = implode('/', $parentFolder);
@@ -98,6 +103,41 @@ class FileManagerController extends Controller
             'path' => $file,
             'deleted' => $isSuccess
         ];
+    }
+
+    public function rename(Request $request)
+    {
+        $file = $request->get('file');
+        $name = $request->get('name');
+
+        $newFile = explode('/', $file);
+        array_pop($newFile);
+        array_push($newFile, $name);
+        $newFile = implode('/', $newFile);
+
+        \Storage::move($file, $newFile);
+
+        $url = str_replace('public/', '', $newFile);
+        $url = '/storage/' . $url;
+
+        sleep(1);
+
+        return [
+            'status' => 'ok',
+            'file' => $newFile,
+            'url' => $url
+        ];
+    }
+
+    public function upload(Request $request)
+    {
+        /** @var UploadedFile $file */
+        $file = $request->file('file');
+        $folder = $request->get('folder');
+
+        $file->move(storage_path('app/public/' . $folder), $file->getClientOriginalName());
+
+        return $this->getDirectoryInfo($request);
     }
 
     protected function humanFilesize($bytes, $decimals = 2) {

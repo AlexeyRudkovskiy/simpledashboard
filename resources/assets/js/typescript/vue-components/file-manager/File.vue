@@ -2,7 +2,8 @@
     <div class="file-container">
         <div class="file-icon"><img v-bind:src="getIconPath()" /></div>
         <div class="file-name" v-if="!rename.isActive" :ref="'filename'">{{ fileName }}</div>
-        <div class="file-input-field" v-if="rename.isActive"><input type="text" v-model="fileName" v-bind:style="{ width: (rename.inputWidth + 8) + 'px' }" /></div>
+        <div class="file-input-field" v-if="rename.isActive"><input type="text" v-model="fileName" v-bind:style="{ width: (rename.inputWidth + 8) + 'px' }" @blue="renameFile" /></div>
+        <div class="file-rename-apply" v-if="rename.isActive" @click="renameFile"><i class="fa fa-check"></i></div>
         <div class="file-size">{{ size }}</div>
         <div class="file-actions">
             <ul class="file-actions-list">
@@ -23,6 +24,7 @@
                 size: null,
                 type: null,
                 url: null,
+                fileObject: null,
 
                 rename: {
                     isActive: false,
@@ -46,9 +48,10 @@
                 this.size = _file.size;
                 this.type = _file.type;
                 this.url = _file.url;
+                this.fileObject = _file;
             },
             showLink() {
-                const path = this.file.url;
+                const path = this.fileObject.url;
                 alert(path);
             },
             deleteFile() {
@@ -70,6 +73,22 @@
                     this.rename.inputWidth = boundingRect.width;
                 }
                 this.rename.isActive = !this.rename.isActive;
+            },
+            renameFile() {
+                const newFileName = this.fileName;
+                axios.post(`/admin/files/rename`, {
+                    file: this.file.path,
+                    name: newFileName
+                })
+                    .then(response => response.data)
+                    .then(response => {
+                        this.fileName = newFileName;
+                        this.fileObject.url = response.url;
+
+                        return response;
+                    })
+                    .then(response => this.rename.isActive = false)
+                    .catch(e => alert(e.response.data.message));
             }
         },
         watch: {

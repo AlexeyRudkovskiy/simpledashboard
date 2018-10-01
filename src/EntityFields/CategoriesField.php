@@ -10,7 +10,9 @@ namespace ARudkovskiy\Admin\EntityFields;
 
 
 use ARudkovskiy\Admin\Contracts\EntityField;
+use ARudkovskiy\Admin\Entities\MenuEntity;
 use ARudkovskiy\Admin\Models\Category;
+use ARudkovskiy\Admin\Models\Menu;
 use Illuminate\Http\Request;
 
 class CategoriesField extends EntityField
@@ -45,6 +47,10 @@ class CategoriesField extends EntityField
     {
         $categories = $request->get('categories');
         $entityObject->{$this->name}()->sync($categories, true);
+
+        if ($entityObject instanceof Menu) {
+            $entityObject->without_categories = $categories === null || count($categories) < 1;
+        }
     }
 
 }

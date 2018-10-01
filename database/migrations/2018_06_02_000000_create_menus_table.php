@@ -27,6 +27,9 @@ class CreateMenusTable extends Migration
             $table->json('items');
             $table->string('location', 32);
             $table->string('tag')->nullable();
+            $table->boolean('without_categories')->default(true);
+
+            $table->integer('order')->default(100);
 
             $table->timestamps();
         });

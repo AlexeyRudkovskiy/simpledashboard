@@ -10,6 +10,7 @@ namespace ARudkovskiy\Admin\Http;
 
 
 use ARudkovskiy\Admin\Container\AdminContainerInterface;
+use ARudkovskiy\Admin\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
@@ -41,6 +42,10 @@ class DashboardViewComposer
 
         $view->with('admin', $this->adminContainer);
         $view->with('entity_name', $entityName);
+
+        $administrator = User::find(session()->get('user_id'));
+
+        $view->with('administrator', $administrator);
 
         if ($entityName !== null) {
             $entity = $this->adminContainer->getEntity($entityName);

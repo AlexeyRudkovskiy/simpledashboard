@@ -62,7 +62,7 @@ class StorageService implements StorageServiceContract
         $month = $date->month;
         $month = '00' . $month;
 
-        $month = substr($month, 1);
+        $month = substr($month, -2);
 
         return implode('/', [ $year, $month ]);
     }

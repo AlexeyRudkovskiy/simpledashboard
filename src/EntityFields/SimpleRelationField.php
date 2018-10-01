@@ -39,7 +39,9 @@ class SimpleRelationField extends EntityField
             $relatedModel = call_user_func($rules, $relatedModel);
         }
 
-        $relatedModel = $relatedModel->get();
+        if ($this->getOption('select2') === null) {
+            $relatedModel = $relatedModel->get();
+        }
 
         return parent::renderEditable()
             ->with('relation_data', $relatedModel)
