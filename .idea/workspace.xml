@@ -93,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/database/migrations/2018_06_00_000000_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+              <caret line="19" column="66" lean-forward="true" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -399,12 +399,12 @@
       <workItem from="1536489823274" duration="6877000" />
       <workItem from="1536582899232" duration="3911000" />
       <workItem from="1538315414406" duration="8424000" />
-      <workItem from="1538411386224" duration="9634000" />
+      <workItem from="1538411386224" duration="10012000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="255567000" />
+    <option name="totallyTimeSpent" value="255945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="994" extended-state="0" />
@@ -837,7 +837,7 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_06_00_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <caret line="19" column="66" lean-forward="true" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
         </state>
       </provider>
     </entry>
