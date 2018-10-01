@@ -104,7 +104,8 @@ return [
 
     'menu' => [
         'media' => 'Медіа',
-        'files' => 'Файли'
+        'files' => 'Файли',
+        'config' => 'Налаштування'
     ],
 
     'frontend' => [

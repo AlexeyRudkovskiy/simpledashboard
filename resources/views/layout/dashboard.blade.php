@@ -65,6 +65,7 @@
                     @endforeach
                     <li><a href="{{ route('admin.media.index') }}"><i class="fa fa-video-camera"></i><span class="hide-menu">@lang('@admin::dashboard.menu.media')</span></a></li>
                     <li><a href="{{ route('admin.files.index') }}"><i class="fa fa-folder"></i><span class="hide-menu">@lang('@admin::dashboard.menu.files')</span></a></li>
+                    <li><a href="{{ route('admin.config.index') }}"><i class="fa fa-cogs"></i><span class="hide-menu">@lang('@admin::dashboard.menu.config')</span></a></li>
                 </ul>
             </nav>
         </div>
