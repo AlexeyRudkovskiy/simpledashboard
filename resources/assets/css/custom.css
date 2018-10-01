@@ -646,6 +646,64 @@
       padding: 16px;
       padding-top: 0; }
 
+.file-manager {
+  display: flex; }
+  .file-manager .file-manager-file-info {
+    width: 250px;
+    flex-shrink: 0;
+    flex-grow: 0; }
+  .file-manager .file-manager-files {
+    width: 100%;
+    flex-shrink: 1;
+    flex-grow: 0;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    overflow: hidden; }
+    .file-manager .file-manager-files .file-container {
+      border: 1px solid transparent;
+      padding: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      user-select: none;
+      box-sizing: border-box; }
+      .file-manager .file-manager-files .file-container:first-child {
+        border-radius: 3px 3px 0 0; }
+      .file-manager .file-manager-files .file-container:last-child {
+        border-radius: 0 0 3px 3px; }
+      .file-manager .file-manager-files .file-container:hover {
+        border-color: #3498db; }
+        .file-manager .file-manager-files .file-container:hover .file-actions {
+          display: block; }
+      .file-manager .file-manager-files .file-container .file-icon img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px; }
+      .file-manager .file-manager-files .file-container .file-input-field input {
+        margin-top: -1px;
+        position: relative;
+        top: 1px; }
+      .file-manager .file-manager-files .file-container .file-size {
+        margin-left: 8px; }
+      .file-manager .file-manager-files .file-container .file-actions {
+        margin-left: auto;
+        display: none; }
+        .file-manager .file-manager-files .file-container .file-actions .file-actions-list {
+          display: flex;
+          align-items: center; }
+          .file-manager .file-manager-files .file-container .file-actions .file-actions-list .file-action {
+            box-sizing: border-box;
+            padding: 8px 12px;
+            margin-top: -8px;
+            margin-bottom: -8px;
+            border-radius: 3px;
+            overflow: hidden;
+            opacity: 0.8; }
+            .file-manager .file-manager-files .file-container .file-actions .file-actions-list .file-action:hover {
+              opacity: 1; }
+
 .crud-actions ul {
   display: flex;
   flex-direction: row-reverse; }

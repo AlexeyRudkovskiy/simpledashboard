@@ -8,6 +8,8 @@ import axios from 'axios';
 
 import AddMenuItem from './vue-components/AddMenuItem.vue'
 import MenuField from './vue-components/MenuField.vue'
+import MenuBuilder from './vue-components/MenuBuilder.vue'
+import FileManager from './vue-components/file-manager/FileManager.vue'
 
 export const eventsBus = new Vue();
 
@@ -67,38 +69,50 @@ export const eventsBus = new Vue();
   // shouldBeTranslated
   //   .forEach(element => element.innerHTML = translation.translate(element.getAttribute('data-translate')));
 
-  const addMenuLink = document.querySelector('[data-add-menu-link]');
-  const menuField = document.querySelector('[data-menu-vue-app]');
+  (Vue as any).component('AddMenuItem', AddMenuItem);
+  (Vue as any).component('MenuField', MenuField);
+  (Vue as any).component('MenuBuilder', MenuBuilder);
+  (Vue as any).component('FileManager', FileManager);
 
-  if (addMenuLink !== null && menuField !== null) {
-    let menuObject: any = (window as any).menus[menuField.getAttribute('data-id')];;
-
-    if (menuObject === null) {
-      menuObject = [];
-    }
-
-    if (addMenuLink !== null) {
-      new Vue({
-        render: h => h(AddMenuItem, {
-          props: {
-            id: addMenuLink.getAttribute('data-id'),
-            entities: menuObject.entities
-          }
-        }),
-      }).$mount('[data-add-menu-link]')
-    }
-
-    if (menuField !== null) {
-      new Vue({
-        render: h => h(MenuField, {
-          props: {
-            id: menuField.getAttribute('data-id'),
-            fieldName: menuField.getAttribute('data-name'),
-            items: menuObject.items
-          }
-        }),
-      }).$mount('[data-menu-vue-app]')
-    }
+  const vueApps = document.querySelectorAll('.vue-app');
+  for (let i = 0; i < vueApps.length; i++) {
+    const vueApp = new Vue({
+      el: vueApps[i]
+    });
   }
+
+  // const addMenuLink = document.querySelector('[data-add-menu-link]');
+  // const menuField = document.querySelector('[data-menu-vue-app]');
+  //
+  // if (addMenuLink !== null && menuField !== null) {
+  //   let menuObject: any = (window as any).menus[menuField.getAttribute('data-id')];;
+  //
+  //   if (menuObject === null) {
+  //     menuObject = [];
+  //   }
+  //
+  //   if (addMenuLink !== null) {
+  //     new Vue({
+  //       render: h => h(AddMenuItem, {
+  //         props: {
+  //           id: addMenuLink.getAttribute('data-id'),
+  //           entities: menuObject.entities
+  //         }
+  //       }),
+  //     }).$mount('[data-add-menu-link]')
+  //   }
+  //
+  //   if (menuField !== null) {
+  //     new Vue({
+  //       render: h => h(MenuField, {
+  //         props: {
+  //           id: menuField.getAttribute('data-id'),
+  //           fieldName: menuField.getAttribute('data-name'),
+  //           items: menuObject.items
+  //         }
+  //       }),
+  //     }).$mount('[data-menu-vue-app]')
+  //   }
+  // }
 
 })();

@@ -10,6 +10,7 @@ namespace ARudkovskiy\Admin\Contracts;
 
 use ARudkovskiy\Admin\EntityFields\IdField;
 use ARudkovskiy\Admin\EntityFields\SimpleRelationField;
+use ARudkovskiy\Admin\Events\EntitySaved;
 use ARudkovskiy\Admin\Exceptions\EntityClassIsUndefined;
 use ARudkovskiy\Admin\Models\Menu;
 use Illuminate\Http\Request;
@@ -31,6 +32,9 @@ abstract class AbstractEntity implements Entity
 
     /** @var bool  */
     protected $menuable = false;
+
+    /** @var bool  */
+    protected $routable = false;
 
     /** @var Collection */
     private $fields = null;
@@ -154,7 +158,14 @@ abstract class AbstractEntity implements Entity
 
         /** @var EntityField $field */
         foreach ($fields as $field) {
-            if ($field instanceof IdField || $field->isShouldIgnoreOnUpdate() || $field->isHandleAfterSave() !== $isAfterSave) {
+            if ($field instanceof IdField || $field->isShouldIgnoreOnUpdate()) {
+                continue;
+            }
+            if ($field->isHandleAfterSave() && !$isAfterSave) {
+                $defaultValue = $field->getDefaultValue();
+                if ($defaultValue !== null) {
+                    $this->entityObject->{$field->getName()} = $defaultValue;
+                }
                 continue;
             }
             $field->handleRequest($request, $this->entityObject);
@@ -196,6 +207,11 @@ abstract class AbstractEntity implements Entity
         return $this->menuable;
     }
 
+    public function isRoutable(): bool
+    {
+        return $this->routable;
+    }
+
     public function create()
     {
         $entityClass = $this->getEntityClass();
@@ -207,6 +223,9 @@ abstract class AbstractEntity implements Entity
     {
         $saveResult = $this->entityObject->save();
         $this->handleRequest(request(), true);
+        $saveResult = $this->entityObject->save();
+
+        event(new EntitySaved($this));
 
         if ($this->isMenuable()) {
             $this->getObject()->menus()

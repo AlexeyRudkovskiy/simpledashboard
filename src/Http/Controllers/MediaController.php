@@ -61,12 +61,12 @@ class MediaController
             });
 
         if (!$isAllOnOnePage) {
-            $folders = \Storage::directories('/public/' . $folder);
+            $folders = \Storage::directories('/public/media/' . $folder);
             $folderEscaped = str_replace('/', '\/', $folder);
 
             $folders = collect($folders)
                 ->map(function (string $folder) {
-                    return preg_replace('/^public\//', '', $folder);
+                    return preg_replace('/^public\/media\//', '', $folder);
                 })
                 ->map(function (string $folderName) use ($folder, $folderEscaped) {
                     return [

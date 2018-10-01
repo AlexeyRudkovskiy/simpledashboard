@@ -41,6 +41,17 @@ class Repository
         return $objects;
     }
 
+    public function findAllOrdered($orderBy, $orderType)
+    {
+        $entityClass = $this->entity->getEntityClass();
+        $tempObject = new $entityClass;
+        $objects = $tempObject->orderBy($orderBy, $orderType)->get();
+        $objects = $objects->map(function ($object) {
+            return $this->entity->fromObject($object);
+        });
+        return $objects;
+    }
+
     public function findLatest()
     {
         $entityClass = $this->entity->getEntityClass();

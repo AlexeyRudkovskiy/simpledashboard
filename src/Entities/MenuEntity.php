@@ -37,11 +37,6 @@ class MenuEntity extends AbstractEntity
                 ->setOptions([
                     'location' => 'sidebar'
                 ]),
-            AddMenuItemField::create('menu_item')
-                ->setOptions([
-                    'location' => 'sidebar',
-                    'id' => implode('_', [ 'menu', 'items', $this->getUniqueIdentifier() ])
-                ]),
             TextField::create('location')
                 ->setOptions([ 'location' => 'sidebar' ]),
             TextField::create('tag')

@@ -33,12 +33,17 @@
             },
             items: {
                 type: Array,
-                default: []
+                default: () => []
             }
         },
         data() {
             return {
                 menuItems: [  ]
+            }
+        },
+        watch: {
+            items: function (_items) {
+                this.menuItems = _items;
             }
         },
         methods: {
@@ -57,7 +62,6 @@
             this.menuItems = this.items;
 
             eventsBus.$on(this.id + '-selected', (payload) => {
-                console.log('payload', payload);
                 this.addMenuItem(payload);
             });
 

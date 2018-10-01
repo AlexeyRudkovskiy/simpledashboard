@@ -45,6 +45,8 @@ class UploadFile implements UploadFileContract
             $folder = substr($folder, 1);
         }
 
+        $folder = 'media/' . $folder;
+
         $targetFolder = 'app/public/' . $folder;
         $targetFolderWithoutLastSlash = null;
         if (!ends_with($targetFolder, '/')) {

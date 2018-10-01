@@ -122,6 +122,11 @@ abstract class EntityField
         return $this->value;
     }
 
+    public function getDefaultValue()
+    {
+        return null;
+    }
+
     /**
      * @return bool
      */

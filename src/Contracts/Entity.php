@@ -49,6 +49,8 @@ interface Entity
 
     public function isMenuable(): bool;
 
+    public function isRoutable(): bool;
+
     public function process($object);
 
     public function handleRequest(Request $request, bool $isAfterSave = false);

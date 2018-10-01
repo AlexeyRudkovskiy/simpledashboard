@@ -68,9 +68,8 @@
                         <a href="{{ route('admin.crud.index', [ 'entity' => $entity->getShortName() ]) }}"><i class="{{ $entity->getIcon() }}"></i><span class="hide-menu">{{ $entity->getTranslations()['sidebar'] }}</span></a>
                     </li>
                     @endforeach
-                    <li><a href="{{ route('admin.media.index') }}"><i class="fa fa-video-camera"></i><span class="hide-menu">Медиа</span></a></li>
-                    <li><a href="/admin/settings"><i class="fa fa-gears"></i><span class="hide-menu">Настройки</span></a></li>
-                    <li><a href="/admin/settings"><i class="fa fa-info"></i><span class="hide-menu">О системе</span></a></li>
+                    <li><a href="{{ route('admin.media.index') }}"><i class="fa fa-video-camera"></i><span class="hide-menu">@lang('@admin::dashboard.menu.media')</span></a></li>
+                    <li><a href="{{ route('admin.files.index') }}"><i class="fa fa-folder"></i><span class="hide-menu">@lang('@admin::dashboard.menu.files')</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -111,8 +110,6 @@
     </div>
 </div>
 
-@stack('scripts-before')
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/js-beautify/1.8.0-rc5/beautify.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/js-beautify/1.8.0-rc5/beautify-css.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/js-beautify/1.8.0-rc5/beautify-html.min.js"></script>
@@ -120,9 +117,11 @@
 <script src="{{ asset('arudkovskiy/admin/js/lib/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('arudkovskiy/admin/js/lib/bootstrap/js/popper.min.js') }}"></script>
 <script src="{{ asset('arudkovskiy/admin/js/lib/bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('arudkovskiy/admin/js/jquery.slimscroll.js') }}"></script>
-<script src="{{ asset('arudkovskiy/admin/js/sidebarmenu.js') }}"></script>
 <script src="{{ asset('arudkovskiy/admin/js/lib/sticky-kit-master/dist/sticky-kit.min.js') }}"></script>
+
+@stack('scripts-before')
+
+<script src="{{ asset('arudkovskiy/admin/js/sidebarmenu.js') }}"></script>
 <script src="{{ asset('arudkovskiy/admin/js/custom.min.js') }}"></script>
 <script src="{{ asset('arudkovskiy/admin/js/admin.bundle.js') }}"></script>
 

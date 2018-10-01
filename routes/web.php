@@ -23,6 +23,8 @@ Route::middleware([
     ->name('admin.')
     ->group(function() {
         Route::get('/', 'SimpleController@indexAction')->name('dashboard');
+        Route::get('/config', 'ConfigController@index')->name('config.index');
+        Route::post('/config', 'ConfigController@save')->name('config.save');
 
         // CRUD stuff
         Route::prefix('entity')
@@ -32,6 +34,7 @@ Route::middleware([
                 Route::get('/edit', 'CrudController@edit')->name('crud.edit');
                 Route::post('/edit', 'CrudController@update')->name('crud.update');
                 Route::post('/create', 'CrudController@save')->name('crud.save');
+                Route::get('/toggle_boolean', 'CrudController@toggleBoolean')->name('crud.toggle_boolean');
 
                 Route::get('/delete', 'CrudController@delete')->name('crud.delete');
             });
@@ -42,9 +45,12 @@ Route::middleware([
                 Route::post('/', 'MediaController@upload')->name('media.upload');
             });
 
-        Route::get('test', function () {
-            return 'test';
-        });
+        Route::prefix('files')
+            ->group(function () {
+                Route::get('/', 'FileManagerController@index')->name('files.index');
+                Route::get('/directory', 'FileManagerController@getDirectoryInfo')->name('files.directory');
+                Route::post('/delete', 'FileManagerController@delete')->name('files.delete');
+            });
 
         Route::prefix('api')
             ->namespace('API')

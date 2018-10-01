@@ -28,6 +28,7 @@ class UserEntity extends AbstractEntity
             TextField::create('username')
                 ->showInIndexTable()
                 ->setOrderInIndexTable(1),
+            TextField::create('full_name'),
             EmailField::create('email')
                 ->showInIndexTable()
                 ->setWidth(300)
@@ -38,12 +39,7 @@ class UserEntity extends AbstractEntity
 
     public function getTranslations(): array
     {
-        return [
-            'sidebar' => 'Пользователи',
-            'page' => [
-                'header' => 'Пользователи'
-            ]
-        ];
+        return trans('@admin::dashboard.entity.user');
     }
 
     public function validateRequest(string $type): bool

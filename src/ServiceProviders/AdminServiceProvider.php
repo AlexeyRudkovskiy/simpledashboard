@@ -18,13 +18,21 @@ use ARudkovskiy\Admin\Contracts\UploadFileContract;
 use ARudkovskiy\Admin\Entities\CategoryEntity;
 use ARudkovskiy\Admin\Entities\MenuEntity;
 use ARudkovskiy\Admin\Entities\UserEntity;
+use ARudkovskiy\Admin\Events\EntitySaved;
 use ARudkovskiy\Admin\Http\DashboardViewComposer;
+use ARudkovskiy\Admin\Listeners\EntitySavedListener;
 use ARudkovskiy\Admin\Services\StorageService;
 use ARudkovskiy\Admin\Services\UploadFile;
 use Illuminate\Support\ServiceProvider;
 
 class AdminServiceProvider extends ServiceProvider
 {
+
+    protected $events = [
+        EntitySaved::class => [
+            EntitySavedListener::class
+        ]
+    ];
 
     public function register() {
         $entities = config('admin.entities');
@@ -75,6 +83,15 @@ class AdminServiceProvider extends ServiceProvider
         });
 
         view()->composer('@admin::*', DashboardViewComposer::class);
+
+        foreach ($this->events as $event => $listeners) {
+            foreach ($listeners as $listener) {
+                \Event::listen($event, function () use ($listener) {
+                    $listenerInstance = new $listener();
+                    call_user_func_array([ $listenerInstance, 'handle' ], func_get_args());
+                });
+            }
+        }
 
         if ($this->app->runningInConsole()) {
             $this->commands([

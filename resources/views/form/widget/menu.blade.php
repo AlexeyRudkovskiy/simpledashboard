@@ -1,4 +1,7 @@
-<div class="form-group" data-id="{{ $id ?? $name }}" data-name="{{ $name }}" data-menu-vue-app></div>
+<div class="vue-app">
+    <menu-builder id="{{ $id ?? $name }}" field-name="{{ $name }}"></menu-builder>
+    {{--<menu-field :id="'{{ $id ?? $name }}'" :field-name="'{{ $name }}'"></menu-field>--}}
+</div>
 @push('scripts-before')
     <script>
         if (typeof window.menus === "undefined") {

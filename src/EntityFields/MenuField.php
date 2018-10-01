@@ -25,6 +25,7 @@ class MenuField extends EntityField
     {
         parent::__construct();
         $this->setIsUpdatingManually(true);
+        $this->setHandleAfterSave(true);
     }
 
     public function renderEditable()
@@ -86,6 +87,7 @@ class MenuField extends EntityField
             $menuableRelations[$key]->sync($syncData, true);
         }
 
+        $this->value = $items;
         $entityObject->{$this->name} = $items;
     }
 
@@ -102,6 +104,11 @@ class MenuField extends EntityField
                 return [ $entity->getShortName() => $entity->getEntityClass() ];
             })
             ->toArray();
+    }
+
+    public function getDefaultValue()
+    {
+        return $this->getValue() ?? [];
     }
 
 }

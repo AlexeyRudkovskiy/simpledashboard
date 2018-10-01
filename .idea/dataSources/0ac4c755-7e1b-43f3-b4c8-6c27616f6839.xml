@@ -49,7 +49,6 @@
     <index id="25" parent="6" name="categoriables_categoriable_id_categoriable_type_index">
       <ColNames>categoriable_id
 categoriable_type</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <column id="26" parent="7" name="id">
       <Position>1</Position>
@@ -142,7 +141,6 @@ categoriable_type</ColNames>
     <index id="45" parent="9" name="menuables_menuable_id_menuable_type_index">
       <ColNames>menuable_id
 menuable_type</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <foreign-key id="46" parent="9">
       <ColNames>menu_id</ColNames>
@@ -317,14 +315,12 @@ menuable_type</ColNames>
     <index id="81" parent="14" name="role_user_role_id_user_id_unique">
       <ColNames>role_id
 user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="82" parent="14" name="sqlite_autoindex_role_user_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>role_id
 user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="83" parent="14">
@@ -402,7 +398,6 @@ user_id</ColNames>
     </column>
     <index id="98" parent="16" name="sessions_id_unique">
       <ColNames>id</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <column id="99" parent="17" name="type">
@@ -467,7 +462,6 @@ user_id</ColNames>
     </column>
     <index id="113" parent="19" name="users_email_unique">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="114" parent="19">
@@ -504,7 +498,6 @@ user_id</ColNames>
     <index id="120" parent="20" name="views_viewable_id_viewable_type_index">
       <ColNames>viewable_id
 viewable_type</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="121" parent="20">
       <ColNames>id</ColNames>

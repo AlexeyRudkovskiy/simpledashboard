@@ -7,6 +7,7 @@
             {{ $key }}="{{ $attribute }}"
         @endforeach
         @if(!empty($value)) value="{{ $value }}" @endif
+        @if($type === 'checkbox' && isset($checked) && $checked) checked @endif
     />
     @endspaceless
 </div>

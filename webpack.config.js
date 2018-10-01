@@ -27,7 +27,10 @@ module.exports = {
         new VueLoaderPlugin()
     ],
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        },
+        extensions: ['.tsx', '.ts', '.js', '.vue']
     },
     output: {
         filename: '[name].bundle.js',

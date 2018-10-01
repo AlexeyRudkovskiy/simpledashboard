@@ -18,9 +18,18 @@ class SlugField extends TextField
     public function handleRequest(Request $request, $entityObject)
     {
         $originalFieldName = $this->getOption('config.field');
+        $isManually = $this->getOption('config.manually');
         $originalValue = $request->get($originalFieldName);
         $slugify = new Slugify($this->getOption('config'));
-        $this->value = $slugify->slugify($originalValue);
+        $slug = $slugify->slugify($originalValue);
+
+        $currentSlug = $entityObject->{$this->getName()};
+        $manualSlug = $slugify->slugify($request->get($this->getName()));
+        if (($manualSlug !== $currentSlug || $currentSlug === $manualSlug) && !empty($manualSlug)) {
+            $this->value = $manualSlug;
+        } else {
+            $this->value = $slug;
+        }
     }
 
     public function getDefaultOptions(): array

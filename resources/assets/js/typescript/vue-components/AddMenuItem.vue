@@ -9,7 +9,7 @@
                         Просте посилання
                     </label>
                 </div>
-                <div class="form-check" v-for="entity in entities" :key="entity.id" :value="entity">
+                <div class="form-check" v-for="entity in definedEntities" :key="entity.id" :value="entity">
                     <input class="form-check-input" type="radio" name="entity" v-bind:id="entity.id" v-bind:value="entity.id" v-model="type">
                     <label class="form-check-label" v-bind:for="entity.id">
                         {{ entity.title }}
@@ -56,7 +56,7 @@
                     name: null
                 },
                 search: [],
-                _entities: {}
+                definedEntities: {}
             }
         },
         props: {
@@ -66,7 +66,7 @@
             },
             entities: {
                 type: Array,
-                default: []
+                default: () => []
             }
         },
         methods: {
@@ -75,7 +75,7 @@
 
                 const payload = {
                     id, title,
-                    type: this._entities[this.type.replace('entity:')].name,
+                    type: this.definedEntities[this.type.replace('entity:')].name,
                     item_id: Math.random().toString(32).substr(2, 6)
                 };
 
@@ -87,7 +87,7 @@
                 const text = this.text;
                 const url = this.url;
                 const type = this.type !== 'link' ?
-                    this._entities[this.type].name :
+                    this.definedEntities[this.type].name :
                     this.type;
                 const item_id = Math.random().toString(32).substr(2, 6);
 
@@ -124,19 +124,26 @@
                 const entity = this.type;
                 axios.post('/admin/api/search/', {
                     query: this.record.name,
-                    entity: this._entities[entity].name
+                    entity: this.definedEntities[entity].name
                 })
                     .then(response => response.data)
                     .then(data => this.search = data);
             }, 500)
         },
         mounted() {
-            this._entities = {};
+            this.definedEntities = {};
 
-            this.entities
-                .forEach(entity => {
-                    this._entities[entity.id] = entity;
-                });
+            if (this.entities.length > 0) {
+                this.entities
+                    .forEach(entity => {
+                        this.definedEntities[entity.id] = entity;
+                    });
+            } else {
+                window.menus[this.id].entities
+                    .forEach(entity => {
+                        this.definedEntities[entity.id] = entity;
+                    });
+            }
 
             eventsBus.$on(this.id + '-edit', (item) => {
                 this.type = item.type;

@@ -143,6 +143,20 @@ class CrudController extends Controller
         return redirect()->back();
     }
 
+    public function toggleBoolean(Request $request)
+    {
+        $repository = new Repository($this->entity);
+        $repository->findByIdAndSaveInEntity($request->get('id'));
+        $object = $this->entity->getObject();
+        $fieldName = $request->get('field');
+        $isChecked = $object->{$fieldName};
+
+        $object->{$fieldName} = !$isChecked;
+        $object->save();
+
+        return trans('@admin::dashboard.general.' . (!$isChecked ? 'yes' : 'no'));
+    }
+
     private function getFields(Entity $entity) {
         $fields = collect($entity->getFields());
 

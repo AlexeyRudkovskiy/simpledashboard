@@ -27,6 +27,21 @@ class WYSIWYGField extends EntityField
             $updatedValue = str_replace($match, '', $updatedValue);
         }
         $this->value = $updatedValue;
+
+        $saveWithoutSlashes = $this->getOption('save_without_slashes');
+        if ($saveWithoutSlashes !== null) {
+            $updatedValue = strip_tags($updatedValue);
+            $updatedValue = str_replace(PHP_EOL, ' ', $updatedValue);
+            $updatedValue = str_replace("\r", '', $updatedValue);
+            $updatedValue = str_replace("\t", '', $updatedValue);
+            $updatedValue = str_replace("\a", '', $updatedValue);
+            while (strpos($updatedValue, '  ') !== false) {
+                $updatedValue = str_replace("  ", ' ', $updatedValue);
+            }
+            $updatedValue = trim($updatedValue);
+            $updatedValue = str_replace('[read-more]', ' ', $updatedValue);
+            $entityObject->{$saveWithoutSlashes} = $updatedValue;
+        }
     }
 
 

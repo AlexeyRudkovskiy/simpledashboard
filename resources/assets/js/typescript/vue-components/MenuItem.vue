@@ -58,9 +58,6 @@
                     id: this.item.item_id
                 });
             }
-        },
-        mounted() {
-            console.log('item', this.item);
         }
     }
 </script>
@@ -70,7 +67,7 @@
     .menu-item {
         box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
         background-color: white;
-        max-width: 400px;
+        max-width: 100%;
 
         margin-top: 20px;
         margin-bottom: 20px;
