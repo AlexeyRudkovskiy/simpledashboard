@@ -23,6 +23,11 @@ class SlugField extends TextField
         $slugify = new Slugify($this->getOption('config'));
         $slug = $slugify->slugify($originalValue);
 
+        $appendix = $this->getEntity()->getObject()->where('title', $originalValue)->count();
+        if ($appendix > 0) {
+            $slug .= '-' . $appendix;
+        }
+
         $currentSlug = $entityObject->{$this->getName()};
         $manualSlug = $slugify->slugify($request->get($this->getName()));
         if (($manualSlug !== $currentSlug || $currentSlug === $manualSlug) && !empty($manualSlug)) {

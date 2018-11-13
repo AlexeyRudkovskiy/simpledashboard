@@ -9,7 +9,7 @@
             <ul class="file-actions-list">
                <li class="file-action" @click="showLink"><i class="fa fa-link"></i></li>
                <li class="file-action" @click="showRenameForm"><i class="fa fa-pencil"></i></li>
-               <li class="file-action" @click="deleteFile"><i class="fa fa-trash"></i></li>
+               <li class="file-action action-delete" @click="deleteFile"><i class="fa fa-trash"></i></li>
             </ul>
         </div>
     </div>
@@ -55,16 +55,19 @@
                 alert(path);
             },
             deleteFile() {
-                axios.post(`/admin/files/delete`, {
-                    file: this.file.path
-                })
-                    .then(response => response.data)
-                    .then(response => response.deleted)
-                    .then(isDeleted => {
-                        if (isDeleted) {
-                            this.$emit('deleted', this.file);
-                        }
-                    });
+                const message = 'Ви дійсно хочете видалити цей файл?' + "\n" + 'Відновити видалений файл буде неможливо';
+                if (confirm(message)) {
+                    axios.post(`/admin/files/delete`, {
+                        file: this.file.path
+                    })
+                        .then(response => response.data)
+                        .then(response => response.deleted)
+                        .then(isDeleted => {
+                            if (isDeleted) {
+                                this.$emit('deleted', this.file);
+                            }
+                        });
+                }
             },
             showRenameForm() {
                 const filenameRef = this.$refs.filename;
@@ -84,6 +87,7 @@
                     .then(response => {
                         this.fileName = newFileName;
                         this.fileObject.url = response.url;
+                        this.file.path = response.file;
 
                         return response;
                     })

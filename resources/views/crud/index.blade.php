@@ -52,7 +52,7 @@
                                        <li><a href="{{ route('admin.crud.delete', [
                                            'entity' => $entity->getShortName(),
                                            'id' => $record->id ?? -1
-                                       ]) }}"><i class="fa fa-remove"></i></a></li>
+                                       ]) }}" class="action-delete"><i class="fa fa-remove"></i></a></li>
                                        <li><a href="{{ route('admin.crud.edit', [
                                            'entity' => $entity->getShortName(),
                                            'id' => $record->id ?? -1

@@ -31,6 +31,7 @@ import {GalleryDelete} from "./floating_actions/gallery-delete";
 import {GalleryDeleteItem} from "./floating_actions/gallery-delete-item";
 import {GalleryAdd} from "./floating_actions/gallery-add";
 import {ActionTable} from "./toolbar-actions/action-table";
+import {TableDelete} from "./floating_actions/table-delete";
 
 export class Editor {
 
@@ -72,6 +73,7 @@ export class Editor {
 
     this.toolbarContainer = editor.querySelector('.wysiwyg-toolbar') as HTMLDivElement;
 
+    this.floatingActions.push(new TableDelete());
     this.floatingActions.push(new TableAddRowAction());
     this.floatingActions.push(new TableDeleteRow());
     this.floatingActions.push(new TableAddColumn());
@@ -375,9 +377,6 @@ export class Editor {
 
       const x = e.clientX;
       const y = e.clientY;
-
-      const thumbnailPath = 'https://images.unsplash.com/photo-1535489487631-2058faeabfd2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=811de44f6383f86bcc7ee9fffd5c42a7&auto=format&fit=crop&w=1349&q=80';
-      const imagePath = 'https://images.unsplash.com/photo-1535489487631-2058faeabfd2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=811de44f6383f86bcc7ee9fffd5c42a7&auto=format&fit=crop&w=1349&q=80';
 
       const node = document.createElement('div');
       node.setAttribute('contenteditable', 'false');

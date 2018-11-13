@@ -7,7 +7,13 @@ export class TableDeleteColumn extends AbstractAction {
     this.anchor.href = 'javascript:';
     this.anchor.innerHTML = 'удалить колонку';
     this.anchor.addEventListener('click', () => {
-      console.log('delete column');
+      const column = this.currentElement;
+      const columnIndex = [...column.parentElement.childNodes].indexOf(column);
+      const rows = column.parentElement.parentElement.parentElement.querySelectorAll('tr');
+      for (let i = 0; i < rows.length; i++) {
+        const _childElement = rows[i].childNodes[columnIndex];
+        _childElement.parentElement.removeChild(_childElement);
+      }
     });
   }
 

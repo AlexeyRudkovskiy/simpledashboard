@@ -18,6 +18,8 @@ use ARudkovskiy\Admin\EntityFields\MenuField;
 use ARudkovskiy\Admin\EntityFields\NumberField;
 use ARudkovskiy\Admin\EntityFields\TextField;
 use ARudkovskiy\Admin\Models\Menu;
+use ARudkovskiy\Admin\Traits\Menuable;
+use Illuminate\Database\Schema\PostgresBuilder;
 
 class MenuEntity extends AbstractEntity
 {
@@ -80,6 +82,21 @@ class MenuEntity extends AbstractEntity
     public function getSection(): string
     {
         return 'system';
+    }
+
+    public function delete()
+    {
+        /** @var Menu $menu */
+        $menu = $this->getObject();
+        $menu->posts()->sync([]);
+//        $menu->posts->map(function ($object) {
+//            $object->menu_id = 0;
+//        })
+//            ->each(function ($object) {
+//                $object->save();
+//            });
+
+        parent::delete();
     }
 
 }

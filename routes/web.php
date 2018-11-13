@@ -46,6 +46,7 @@ Route::middleware([
             ->group(function () {
                 Route::get('/', 'MediaController@index')->name('media.index');
                 Route::post('/', 'MediaController@upload')->name('media.upload');
+                Route::get('/{file}', 'MediaController@delete')->name('media.delete');
             });
 
         Route::prefix('files')
@@ -53,6 +54,8 @@ Route::middleware([
                 Route::get('/', 'FileManagerController@index')->name('files.index');
                 Route::get('/directory', 'FileManagerController@getDirectoryInfo')->name('files.directory');
                 Route::post('/delete', 'FileManagerController@delete')->name('files.delete');
+                Route::post('/delete-folder', 'FileManagerController@deleteFolder')->name('files.delete_folder');
+                Route::post('/create-folder', 'FileManagerController@createFolder')->name('files.create_folder');
                 Route::post('/rename', 'FileManagerController@rename')->name('files.rename');
                 Route::post('/upload', 'FileManagerController@upload')->name('files.upload');
             });

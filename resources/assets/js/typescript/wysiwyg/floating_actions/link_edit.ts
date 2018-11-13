@@ -31,7 +31,9 @@ export class LinkEdit extends AbstractAction {
 
   private updateLink(link, data) {
     link.href = data.href;
-    link.title = data.title;
+    if (typeof data.title !== "undefined" && data.title !== "undefined" && data.title.length > 0) {
+      link.title = data.title;
+    }
     link.innerText = data.value;
   }
 

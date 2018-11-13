@@ -113,6 +113,28 @@ class MediaController
         ]);
     }
 
+    public function delete(File $file)
+    {
+        $filename = $file->name;
+        $thumbnails = $file->thumbnails;
+        $folder = $file->folder;
+        $ext = $file->extension;
+        $fullpath = storage_path('app/public/' . $folder . '/' . $filename . '.' . $ext);
+        if (is_file($fullpath)) {
+            unlink($fullpath);
+        }
+
+        foreach ($thumbnails as $thumbnail) {
+            $thumbnail_path = storage_path('app/public/' . $folder . '/' . $filename . '-' . $thumbnail . '.' . $ext);
+            if (is_file($thumbnail_path)) {
+                unlink($thumbnail_path);
+            }
+        }
+
+        $file->delete();
+        return redirect()->back();
+    }
+
     public function upload(Request $request, UploadFileContract $imageContract)
     {
         $uploaded = $request->file('file');

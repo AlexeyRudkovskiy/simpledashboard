@@ -9,8 +9,17 @@
                     </div>
                 </div>
             </div>
-            <div class="file-container" v-for="folder in folders" :value="folder" @click="goToFolder(folder)">
-                <div class="file-name">{{ folder.name }}</div>
+            <div class="file-manager-header">
+                <span class="current-folder">{{ formattedCurrentFolder }}</span>
+                <span><a href="javascript:" @click="createAFolder()">Створити нову директорію</a></span>
+            </div>
+            <div class="file-container" v-for="folder in folders" :value="folder">
+                <div class="file-name" @click="goToFolder(folder)">{{ folder.name }}</div>
+                <div class="file-actions">
+                    <ul class="file-actions-list">
+                        <li class="file-action action-delete" @click="deleteFolder(folder)"><i class="fa fa-trash"></i></li>
+                    </ul>
+                </div>
             </div>
             <File
                 v-for="(file, index) in files"
@@ -61,6 +70,42 @@
             removeFile(index) {
                 this.files.splice(index, 1);
             },
+            deleteFolder(folder) {
+                const message = 'Ви дійсно хочете видалити цю папку?' + "\n" + 'Відновити вміст папки буде неможливо';
+                if (confirm(message)) {
+                    axios.post(`/admin/files/delete-folder`, {
+                        path: folder.path
+                    })
+                        .then(response => response.data)
+                        .then(response => response.deleted)
+                        .then(isDeleted => {
+                            if (isDeleted) {
+                                this.folders.splice(this.folders.indexOf(folder), 1);
+                            }
+                        });
+                }
+            },
+            createAFolder() {
+                const message = 'Введіть назву нової директорії';
+                const folderName = prompt(message);
+                if (folderName.length > 0) {
+                    axios.post(`/admin/files/create-folder`, {
+                        name: folderName,
+                        path: this.formattedCurrentFolder
+                    })
+                        .then(response => response.data)
+                        .then(response => {
+                            let newPath = this.formattedCurrentFolder + '/' + folderName;
+                            if (newPath.startsWith('/')) {
+                                newPath = newPath.substr(1);
+                            }
+                            this.folders.push({
+                                name: folderName,
+                                path: newPath
+                            });
+                        });
+                }
+            },
             drop(e) {
                 e.preventDefault();
                 const files = [...e.dataTransfer.files];
@@ -108,6 +153,15 @@
                 });
 
                 xhr.send(formData);
+            }
+        },
+        computed: {
+            formattedCurrentFolder() {
+                if (!this.currentFolder.startsWith('/')) {
+                    return '/' + this.currentFolder;
+                }
+
+                return this.currentFolder;
             }
         },
         mounted() {

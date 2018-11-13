@@ -38,7 +38,10 @@
                 </a>
             @endforeach
             @foreach($files as $file)
-                <div class="media-grid-item media-grid-item-file"><img src="{{ $file['thumbnail'] }}" title="{{ $file['name'] }}" /></div>
+                <div class="media-grid-item media-grid-item-file">
+                    <a href="{{ route('admin.media.delete', [ 'id' => $file['id'] ]) }}" class="delete-image action-delete"><i class="fa fa-remove"></i></a>
+                    <img src="{{ $file['thumbnail'] }}" title="{{ $file['name'] }}" />
+                </div>
             @endforeach
             @endspaceless
         </div>

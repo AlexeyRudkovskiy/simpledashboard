@@ -164,6 +164,10 @@ abstract class AbstractEntity implements Entity
     {
         $fields = $this->getFields();
 
+        if ($this->entityObject === null) {
+
+        }
+
         /** @var EntityField $field */
         foreach ($fields as $field) {
             if ($field instanceof IdField || $field->isShouldIgnoreOnUpdate()) {
@@ -180,7 +184,13 @@ abstract class AbstractEntity implements Entity
             if ($field->isUpdatingManually()) {
                 continue;
             }
-            $this->entityObject->{$field->getName()} = $field->getValue();
+
+            try {
+                $this->entityObject->{$field->getName()} = $field->getValue();
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+                dd($field, $request, $this);
+            }
         }
     }
 
@@ -225,6 +235,14 @@ abstract class AbstractEntity implements Entity
         $entityClass = $this->getEntityClass();
         $this->entityObject = new $entityClass();
         return $this->entityObject;
+    }
+
+    public function createAndSave()
+    {
+        $entityClass = $this->getEntityClass();
+        $entity = new $this;
+        $entity->entityObject = new $entityClass();
+        return $entity;
     }
 
     public function save()

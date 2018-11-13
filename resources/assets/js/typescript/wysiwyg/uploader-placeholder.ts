@@ -12,7 +12,7 @@ export class UploaderPlaceholder {
     this.clear();
     for (let i = 0; i < this.files.length; i++) {
       const file = this.files.item(i);
-      this.createForFile(file);
+      this.createForFile(file, i);
     }
   }
 
@@ -22,7 +22,7 @@ export class UploaderPlaceholder {
     }
   }
 
-  private createForFile(file: File) {
+  private createForFile(file: File, index: number) {
     const placeholder = document.createElement('div');
     const filename = document.createElement('div');
     const hint = document.createElement('div');
@@ -45,7 +45,7 @@ export class UploaderPlaceholder {
 
     this.upload(file, (uploaded) => {
       this.element.removeChild(placeholder);
-      this.uploaded.push(uploaded[0]);
+      this.uploaded[index] = uploaded[0];
       this.processUploaded();
     }, (percents) => {
       progressBar.style.width = percents + '%';

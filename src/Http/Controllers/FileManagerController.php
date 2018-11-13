@@ -105,6 +105,25 @@ class FileManagerController extends Controller
         ];
     }
 
+    public function deleteFolder(Request $request)
+    {
+        if (!$request->has('path')) {
+            return [
+                'deleted' => false
+            ];
+        }
+
+        $folderPath = storage_path('app/public/' . $request->get('path'));
+        return [ 'deleted' => \File::deleteDirectory($folderPath) ];
+    }
+
+    public function createFolder(Request $request)
+    {
+        $newFolderPath = storage_path('app/public' . $request->get('path') . '/' . $request->get('name'));
+        $isCreated = \File::makeDirectory($newFolderPath);
+        return [ 'created' => $isCreated ];
+    }
+
     public function rename(Request $request)
     {
         $file = $request->get('file');
@@ -115,12 +134,12 @@ class FileManagerController extends Controller
         array_push($newFile, $name);
         $newFile = implode('/', $newFile);
 
-        \Storage::move($file, $newFile);
+        if ($newFile !== $file) {
+            \Storage::move($file, $newFile);
+        }
 
         $url = str_replace('public/', '', $newFile);
         $url = '/storage/' . $url;
-
-        sleep(1);
 
         return [
             'status' => 'ok',

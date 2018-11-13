@@ -45,9 +45,6 @@ export class ActionTable extends AbstractAction {
     wrapper.classList.add('post-table');
     table.classList.add('table', 'table-stripe');
 
-    wrapper.setAttribute('contenteditable', 'false');
-    table.setAttribute('contenteditable', 'true');
-
     table.setAttribute('border', '0');
     table.setAttribute('cellspacing', '0');
     table.setAttribute('cellpadding', '0');
@@ -63,7 +60,12 @@ export class ActionTable extends AbstractAction {
       theadTr.appendChild(th);
     }
 
-    target.parentElement.insertBefore(wrapper, target.nextElementSibling);
+    const emptyP1 = document.createElement('p');
+    const emptyP2 = document.createElement('p');
+
+    target.parentElement.insertBefore(emptyP1, target.nextElementSibling);
+    target.parentElement.insertBefore(wrapper, emptyP1);
+    target.parentElement.insertBefore(emptyP2, wrapper);
 
   }
 

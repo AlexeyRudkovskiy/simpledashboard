@@ -59,6 +59,8 @@ interface Entity
 
     public function create();
 
+    public function createAndSave();
+
     public function save();
 
     public function delete();

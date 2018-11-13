@@ -32,6 +32,22 @@
       }
     }
 
+    .file-manager-header {
+      box-sizing: border-box;
+      padding: $default-padding / 4 * 3;
+      font-size: 0.8rem;
+      box-shadow: 0 3px 6px rgba(black, 0.05);
+
+      span {
+        margin-right: $default-padding / 4 * 3;
+      }
+
+      .current-folder {
+        opacity: 0.8;
+        font-weight: bold;
+      }
+    }
+
     .file-container {
       border: 1px solid transparent;
       padding: $default-padding / 4 * 3;

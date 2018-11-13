@@ -31,7 +31,11 @@ export class ActionLinkCreate extends AbstractAction {
         const range = this.selection.getRangeAt(i);
         const link = document.createElement('a');
         link.innerHTML = data.value;
-        link.href = data.href;
+
+        if (typeof data.title !== "undefined" && data.title !== "undefined" && data.title.length > 0) {
+          link.title = data.title;
+        }
+
         link.title = data.title;
 
         range.deleteContents();
