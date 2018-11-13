@@ -45,6 +45,13 @@
             @endforeach
             @endspaceless
         </div>
+        @if(isset($files_pagination))
+        <div class="media-pagination">
+            <div style="margin-top: 15px;">
+                {!! $files_pagination->render('pagination::bootstrap-4') !!}
+            </div>
+        </div>
+        @endif
     </div>
 
 @endsection

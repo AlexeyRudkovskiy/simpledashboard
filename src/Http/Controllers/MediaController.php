@@ -51,8 +51,9 @@ class MediaController
             $files = File::query();
         }
 
-        $files = $files->latest()
-            ->get()
+        $filesPagination = $files->latest()
+            ->paginate(60);
+        $files = $filesPagination
             ->map(function (File $file) {
                 $thumbnail = $file->getThumbnailPath('150x150');
                 return array_merge($file->toArray(), [
@@ -109,7 +110,8 @@ class MediaController
             'files' => $files,
             'directories' => $folders ?? [],
             'breadcrumbs' => $storageService->createBreadcrumbs($folder ?? ''),
-            'storage_service' => $storageService
+            'storage_service' => $storageService,
+            'files_pagination' => $filesPagination
         ]);
     }
 

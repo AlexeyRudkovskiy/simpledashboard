@@ -23,7 +23,8 @@ return [
         ],
         'config' => [
             'index' => 'Налаштування'
-        ]
+        ],
+        'dashboard' => 'Панель керування'
     ],
     'field' => [
         'file' => [

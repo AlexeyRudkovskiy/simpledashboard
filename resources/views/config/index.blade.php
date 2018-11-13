@@ -17,7 +17,7 @@
                                     <label class="config_{{ $config['name'] }}">{{ $config['label'] }}</label>
                                     @php($repository = new \ARudkovskiy\Admin\Services\Repository($admin->getEntity($config['entity'])))
                                     @php($data = $repository->findAllOrdered($config['order']['by'], $config['order']['type']))
-                                    <select name="config[{{ $config['name'] }}]" id="config_{{ $config['name'] }}" class="form-control" value="{{ $default[$config['name']] }}">
+                                    <select name="config[{{ $config['name'] }}]" id="config_{{ $config['name'] }}" class="form-control" value="{{ $default[$config['name']] ?? null }}">
                                         @spaceless
                                         @foreach($data as $item)
                                             @php($value = $item->getField($config['fields']['value'])->getValue())
