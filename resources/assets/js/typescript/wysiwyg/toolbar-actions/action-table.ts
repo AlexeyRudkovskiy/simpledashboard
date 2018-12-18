@@ -4,7 +4,7 @@ import {AbstractAction} from "./abstract-action";
 export class ActionTable extends AbstractAction {
 
   getDescription(): string {
-    return "Insert a table";
+    return "Додати таблицю";
   }
 
   getIcon(): string {

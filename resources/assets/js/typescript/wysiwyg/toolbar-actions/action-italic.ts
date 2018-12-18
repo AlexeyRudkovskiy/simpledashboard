@@ -5,7 +5,7 @@ export class ActionItalic extends AbstractAction {
   protected isItalic: boolean = false;
 
   getDescription(): string {
-    return "Make text italic";
+    return "Курсив";
   }
 
   getIcon(): string {

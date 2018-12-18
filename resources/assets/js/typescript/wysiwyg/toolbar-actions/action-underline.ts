@@ -9,7 +9,7 @@ export class ActionUnderline extends AbstractAction {
   }
 
   getDescription(): string {
-    return "Underline";
+    return "Підкреслити";
   }
 
   getIcon(): string {

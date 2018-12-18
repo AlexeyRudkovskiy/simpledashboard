@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="form-group">
-            <input type="button" value="Add" @click="add()" class="btn btn-info" />
+            <input type="button" value="Додати" @click="add()" class="btn btn-info" />
         </div>
     </div>
 </template>

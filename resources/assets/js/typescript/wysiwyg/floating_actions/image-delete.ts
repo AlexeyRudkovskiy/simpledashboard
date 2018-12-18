@@ -3,7 +3,7 @@ import {AbstractAction} from "./abstract-action";
 export class ImageDelete extends AbstractAction {
 
   create() {
-    this.createDefaultAnchor('удалить изображение');
+    this.createDefaultAnchor('видалити зображення');
     this.anchor.addEventListener('click', () => {
       const imageWrapper = this.currentElement.parentElement;
       if (imageWrapper.tagName === 'DIV' && imageWrapper.classList.contains('image-wrapper')) {

@@ -5,7 +5,7 @@ export class TableDeleteColumn extends AbstractAction {
   create() {
     this.anchor = document.createElement('a');
     this.anchor.href = 'javascript:';
-    this.anchor.innerHTML = 'удалить колонку';
+    this.anchor.innerHTML = 'видалити комірку';
     this.anchor.addEventListener('click', () => {
       const column = this.currentElement;
       const columnIndex = [...column.parentElement.childNodes].indexOf(column);

@@ -3,7 +3,7 @@ import {AbstractAction} from "./abstract-action";
 export class GalleryDeleteItem extends AbstractAction {
 
   create() {
-    this.createDefaultAnchor('видалити зображення')
+    this.createDefaultAnchor('видалити зображення з галереї')
       .addEventListener('click', () => {
         this.currentElement.parentElement.removeChild(this.currentElement);
         this.editor.hideFloatingActionPanel();

@@ -4,7 +4,7 @@ export class TableDelete extends AbstractAction {
 
   create() {
     this.anchor = document.createElement('a');
-    this.anchor.innerHTML = 'удалить таблицу';
+    this.anchor.innerHTML = 'видалити таблицю';
     this.anchor.setAttribute('href', 'javascript:');
     this.anchor.addEventListener('click', () => {
       let tableElement = this.currentElement;

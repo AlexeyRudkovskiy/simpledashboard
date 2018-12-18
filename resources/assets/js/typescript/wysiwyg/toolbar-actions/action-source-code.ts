@@ -20,7 +20,7 @@ export class ActionSourceCode extends AbstractAction {
   private beautify: any = null;
 
   getDescription(): string {
-    return "Toggle source code";
+    return "Відкрити вихідний код";
   }
 
   getIcon(): string {

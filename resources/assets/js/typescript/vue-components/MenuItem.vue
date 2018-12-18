@@ -5,7 +5,7 @@
             <span class="arrow" @click="remove()"><i class="fa fa-remove"></i></span>
         </div>
         <div v-if="isEditing" class="editing">
-            <a href="javascript:" @click="edit()">Edit</a>
+            <a href="javascript:" @click="edit()">Редагувати</a>
         </div>
     </div>
 </template>

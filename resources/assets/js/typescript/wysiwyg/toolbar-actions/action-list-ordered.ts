@@ -7,7 +7,7 @@ export class ActionListOrdered extends SimpleAction {
   protected hotKey: string = this.composeHotKey('shift+o');
 
   getDescription(): string {
-    return "Ordered list";
+    return "Нумерований список";
   }
 
   getIcon(): string {

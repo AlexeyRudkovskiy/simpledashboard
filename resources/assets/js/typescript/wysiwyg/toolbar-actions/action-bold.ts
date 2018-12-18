@@ -9,7 +9,7 @@ export class ActionBold extends AbstractAction {
   }
 
   getDescription(): string {
-    return "Make text bold";
+    return "Жирний";
   }
 
   getIcon(): string {

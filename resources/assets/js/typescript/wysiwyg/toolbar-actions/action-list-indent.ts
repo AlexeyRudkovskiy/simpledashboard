@@ -7,7 +7,7 @@ export class ActionListIndent extends SimpleAction {
   protected hotKey: string = this.composeHotKey(']');
 
   getDescription(): string {
-    return "Indent list";
+    return "Додати відступ";
   }
 
   getIcon(): string {

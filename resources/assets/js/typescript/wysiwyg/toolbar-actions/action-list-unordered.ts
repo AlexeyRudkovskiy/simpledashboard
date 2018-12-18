@@ -7,7 +7,7 @@ export class ActionListUnordered extends SimpleAction {
   protected hotKey: string = this.composeHotKey('shift+u');
 
   getDescription(): string {
-    return "Insert unordered list";
+    return "Маркований список";
   }
 
   getIcon(): string {

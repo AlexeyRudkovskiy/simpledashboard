@@ -10,7 +10,7 @@ export class TableAddRowAction implements FloatingAction {
 
   create() {
     this.anchor = document.createElement('a');
-    this.anchor.innerHTML = 'добавить строку';
+    this.anchor.innerHTML = 'додати рядок';
     this.anchor.href = 'javascript:';
 
     this.anchor.addEventListener('click', () => {

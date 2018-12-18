@@ -13,7 +13,7 @@ export class ImageChange extends AbstractAction {
 
   create() {
     this.anchor = document.createElement('a');
-    this.anchor.innerHTML = 'изменить';
+    this.anchor.innerHTML = 'змінити';
     this.anchor.href = 'javascript:';
     this.anchor.addEventListener('click', () => {
       this.popup.selectFile('image', (file) => {

@@ -3,7 +3,7 @@ import {AbstractAction} from "./abstract-action";
 export class ImageEdit extends AbstractAction {
 
   create() {
-    this.createDefaultAnchor('редактировать')
+    this.createDefaultAnchor('редагувати')
       .addEventListener('click', () => alert('Editing'));
   }
 

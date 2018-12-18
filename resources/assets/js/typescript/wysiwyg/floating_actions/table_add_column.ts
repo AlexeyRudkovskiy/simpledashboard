@@ -4,7 +4,7 @@ export class TableAddColumn extends AbstractAction {
 
   create() {
     this.anchor = document.createElement('a');
-    this.anchor.innerHTML = 'добавить колонку';
+    this.anchor.innerHTML = 'додати комірку';
     this.anchor.href = 'javascript:';
 
     this.anchor.addEventListener('click', () => {

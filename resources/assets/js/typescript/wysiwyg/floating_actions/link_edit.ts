@@ -10,7 +10,7 @@ export class LinkEdit extends AbstractAction {
 
     this.anchor = document.createElement('a');
     this.anchor.href = 'javascript:';
-    this.anchor.innerHTML = 'редактировать';
+    this.anchor.innerHTML = 'редагувати';
     this.anchor.addEventListener('click', () => {
       const href = this.currentElement.href;
       const value = this.currentElement.innerText;

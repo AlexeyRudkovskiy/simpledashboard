@@ -5,7 +5,7 @@ export class ActionTextAlignCenter extends SimpleAction {
   protected commandName: string = 'JustifyCenter';
 
   getDescription(): string {
-    return "Text align center";
+    return "Центрувати";
   }
 
   getIcon(): string {

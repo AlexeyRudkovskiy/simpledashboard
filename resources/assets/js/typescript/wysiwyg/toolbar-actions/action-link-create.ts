@@ -11,7 +11,7 @@ export class ActionLinkCreate extends AbstractAction {
   private selection: any = null;
 
   getDescription(): string {
-    return "Create a link";
+    return "Додати посилання";
   }
 
   getIcon(): string {

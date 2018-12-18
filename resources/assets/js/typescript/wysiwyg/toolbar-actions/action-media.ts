@@ -13,7 +13,7 @@ export class ActionMedia extends AbstractAction {
   }
 
   getDescription(): string {
-    return "Insert media";
+    return "Додати фото або зображення";
   }
 
   getIcon(): string {

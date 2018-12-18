@@ -6,7 +6,7 @@ export class ActionTextAlignLeft extends SimpleAction {
   protected commandName: string = 'JustifyLeft';
 
   getDescription(): string {
-    return "Text align left";
+    return "Вирівняти по лівому краю";
   }
 
   getIcon(): string {

@@ -3,7 +3,7 @@ import {AbstractAction} from "./abstract-action";
 export class ActionReadMore extends AbstractAction {
 
   getDescription(): string {
-    return "Insert read more breaker";
+    return "Додати \"Читати далі\"";
   }
 
   getIcon(): string {

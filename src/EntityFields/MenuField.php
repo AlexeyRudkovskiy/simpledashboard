@@ -56,6 +56,11 @@ class MenuField extends EntityField
         $items = $request->get('items');
         $items = json_decode($items);
 
+        $baseAppUrl = url('/');
+        foreach ($items as $item) {
+            $item->url = str_replace($baseAppUrl, '', $item->url);
+        }
+
         $menuable = $this->getMenuableEntities();
         $menuableRelations = [];
         $menuableSyncData = [];

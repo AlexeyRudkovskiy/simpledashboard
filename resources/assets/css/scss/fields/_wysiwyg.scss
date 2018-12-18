@@ -132,6 +132,11 @@ $hint-text-color: rgba(white, .9);
       text-decoration: underline !important;
     }
 
+    .post-gallery {
+      border: 2px dashed rgba(black, .1);
+      min-height: 10px;
+    }
+
     .wysiwyg-node {
       &.wysiwyg-read-more {
         margin-top: $default-padding;

@@ -9,7 +9,7 @@ export class ActionVideo extends SimpleAction {
   protected videoPopup: VideoPopup = null;
 
   getDescription(): string {
-    return "Insert a video";
+    return "Вставити відео";
   }
 
   getIcon(): string {

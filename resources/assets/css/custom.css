@@ -353,6 +353,9 @@
       max-width: 100%; }
     .wysiwyg-container .wysiwyg-content a {
       text-decoration: underline !important; }
+    .wysiwyg-container .wysiwyg-content .post-gallery {
+      border: 2px dashed rgba(0, 0, 0, 0.1);
+      min-height: 10px; }
     .wysiwyg-container .wysiwyg-content .wysiwyg-node.wysiwyg-read-more {
       margin-top: 16px;
       margin-bottom: 16px;

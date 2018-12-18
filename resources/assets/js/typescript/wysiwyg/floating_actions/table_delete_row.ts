@@ -4,7 +4,7 @@ export class TableDeleteRow extends AbstractAction {
 
   create() {
     this.anchor = document.createElement('a');
-    this.anchor.innerHTML = 'удалить строку';
+    this.anchor.innerHTML = 'видалити рядок';
     this.anchor.setAttribute('href', 'javascript:');
     this.anchor.addEventListener('click', () => {
       const tr = this.currentElement.parentElement;

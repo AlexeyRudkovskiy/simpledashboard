@@ -5,7 +5,7 @@ export class ActionTextAlignJustify extends SimpleAction {
   protected commandName: string = 'JustifyFull';
 
   getDescription(): string {
-    return "Text align justify";
+    return "За шириною";
   }
 
   getIcon(): string {

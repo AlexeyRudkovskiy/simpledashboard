@@ -38,7 +38,7 @@ class CreateMenusTable extends Migration
             $table->integer('menu_id', false , true);
             $table->morphs('menuable');
 
-            $table->foreign('menu_id')->references('id')->on('menus');
+            $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
         });
     }
 

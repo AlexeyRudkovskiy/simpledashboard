@@ -1,3 +1,4 @@
+///<reference path="toolbar-actions/action-gallery.ts"/>
 import {TableAddRowAction} from "./floating_actions/table_add_row";
 import {FloatingAction} from "./floating_actions/floating_action";
 import {TableAddColumn} from "./floating_actions/table_add_column";
@@ -32,6 +33,7 @@ import {GalleryDeleteItem} from "./floating_actions/gallery-delete-item";
 import {GalleryAdd} from "./floating_actions/gallery-add";
 import {ActionTable} from "./toolbar-actions/action-table";
 import {TableDelete} from "./floating_actions/table-delete";
+import {ActionGallery} from "./toolbar-actions/action-gallery";
 
 export class Editor {
 
@@ -48,7 +50,7 @@ export class Editor {
     [ 'toolbar.table' ],
     [ 'toolbar.link.create' ],
     [ 'toolbar.read_more' ],
-    [ 'toolbar.media', 'toolbar.video' ],
+    [ 'toolbar.media', 'toolbar.video', 'toolbar.gallery' ],
     [ 'toolbar.source_code' ]
   ];
 
@@ -103,6 +105,7 @@ export class Editor {
     this.toolbarActions.push(new ActionLinkCreate());
     this.toolbarActions.push(new ActionVideo());
     this.toolbarActions.push(new ActionTable());
+    this.toolbarActions.push(new ActionGallery());
 
     this.editorContent = editor.querySelector('.wysiwyg-content') as HTMLDivElement;
     this.floatingPanel = editor.querySelector('.wysiwyg-floating-panel') as HTMLDivElement;
@@ -204,6 +207,11 @@ export class Editor {
         currentObject = currentObject.firstElementChild;
       }
     }
+
+    if (currentObject === null && isClick) {
+      currentObject = this.editorContent.querySelector('[contenteditable="false"]');
+    }
+
     const object = this.findParent(currentObject);
     const offsets = this.calculateOffsets(object);
 
@@ -256,6 +264,9 @@ export class Editor {
   }
 
   private findParent(object: any) {
+    if (object === null) {
+      return null;
+    }
     if (typeof object.offsetTop === "undefined") {
       object = (object as any).parentElement;
     }
