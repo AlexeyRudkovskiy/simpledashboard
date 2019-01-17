@@ -14,9 +14,18 @@ use Illuminate\Http\Request;
 class ConfigController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        if (session()->has('__refresh')) {
+            session()->remove('__refresh');
+            return response('<meta http-equiv="refresh" content="3;url=' . url($request->getRequestUri()) . '" /><p>Оновлення файлу конфігурацій</p>');
+        }
+
         $defaults = config('configs');
+
+        if (!array_has($defaults, 'director')) {
+            $defaults['director'] = null;
+        }
 
         return view('@admin::config.index')
             ->with('configs', config('admin.configs'))
@@ -30,6 +39,8 @@ class ConfigController extends Controller
         $config = '<?php' . PHP_EOL . 'return ' . $config . ';' . PHP_EOL;
 
         file_put_contents(config_path() . '/configs.php', $config);
+
+        session()->flash('__refresh', 1);
 
         return redirect()->back();
     }

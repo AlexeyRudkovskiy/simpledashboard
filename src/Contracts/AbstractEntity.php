@@ -146,6 +146,9 @@ abstract class AbstractEntity implements Entity
 //                if ($field instanceof FileField) {
 //                    dd($updatableField, $object->{$field->getName()});
 //                }
+                if ($field->getName() === 'categories') {
+//                    dd($updatableField);
+                }
                 $value = $updatableField === null ?
                     $object->{$field->getName()} :
                     (

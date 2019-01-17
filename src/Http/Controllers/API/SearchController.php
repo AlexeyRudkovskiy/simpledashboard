@@ -29,7 +29,11 @@ class SearchController extends Controller
         return (new $entityClass)
             ->where('title', 'like', '%' . $searchRequest . '%')
             ->select('id', 'title')
-            ->get();
+            ->get()
+            ->map(function ($record) {
+                $record->title = $record->title . ' (' . $record->id . ')';
+                return $record;
+            });
     }
 
 }

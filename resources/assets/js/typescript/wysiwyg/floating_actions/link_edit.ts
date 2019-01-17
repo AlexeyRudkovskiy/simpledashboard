@@ -34,6 +34,11 @@ export class LinkEdit extends AbstractAction {
     if (typeof data.title !== "undefined" && data.title !== "undefined" && data.title.length > 0) {
       link.title = data.title;
     }
+
+    if (link.href.startsWith('http://') || link.href.startsWith('https://') || link.href.startsWith('//')) {
+      link.target = '_blank';
+    }
+
     link.innerText = data.value;
   }
 

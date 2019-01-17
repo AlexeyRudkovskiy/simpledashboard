@@ -1,6 +1,6 @@
 <template>
     <div class="form-group">
-        <label class="form-control-label">Menu items</label>
+        <label class="form-control-label">Елементи меню</label>
         <div>
             <div v-if="menuItems.length < 1" class="alert alert-warning">Empty</div>
             <draggable v-model="menuItems">

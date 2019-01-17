@@ -19,6 +19,9 @@
                                     @php($data = $repository->findAllOrdered($config['order']['by'], $config['order']['type']))
                                     <select name="config[{{ $config['name'] }}]" id="config_{{ $config['name'] }}" class="form-control" value="{{ $default[$config['name']] ?? null }}">
                                         @spaceless
+                                        @if($config['allow_empty'])
+                                            <option value="">-------------------</option>
+                                        @endif
                                         @foreach($data as $item)
                                             @php($value = $item->getField($config['fields']['value'])->getValue())
                                             @php($text = $item->getField($config['fields']['text'])->getValue())

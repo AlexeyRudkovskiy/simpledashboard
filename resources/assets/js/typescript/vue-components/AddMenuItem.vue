@@ -19,11 +19,11 @@
         </div>
         <div v-if="type === 'link'">
             <div class="form-group">
-                <label class="form-control-label">Text</label>
+                <label class="form-control-label">Текст</label>
                 <input type="text" class="form-control" v-model="text" />
             </div>
             <div class="form-group">
-                <label class="form-control-label">URL</label>
+                <label class="form-control-label">Посилання</label>
                 <input type="text" class="form-control" v-model="url" />
             </div>
         </div>

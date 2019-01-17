@@ -2,7 +2,13 @@
     <label for="select__{{ $name }}">{{ $label }}</label>
     <select class="form-control" id="select__{{ $name }}" name="{{ $name }}" @if(isset($select2)) data-use-select2="{{ route('admin.select2', [ 'entity' => $config['entity'], 'id' => $foreign_key, 'value' => $foreign_field ]) }}" @endif>
         @spaceless
+        @if($select2_value !== null && $select2_text !== null)
+            <option value="{{ $select2_value }}" selected>{{ $select2_text }}</option>
+        @endif
         @foreach($relation_data as $item)
+            @if($item->id === $select2_value)
+                @continue
+            @endif
             <option
                     value="{{ $item->{$foreign_key} }}"
                     @if($item->{$foreign_key} == $value)
@@ -28,6 +34,12 @@
                     }
                 });
             });
+            @if($select2_value !== null && $select2_text !== null)
+                const value = {{ $select2_value }};
+                const text = '{{ $select2_text }}';
+
+                $('#select__{{ $name }}').val(value).trigger('change');
+            @endif
         });
     </script>
 @endpush

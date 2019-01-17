@@ -49,6 +49,10 @@ export class UploaderPlaceholder {
       this.processUploaded();
     }, (percents) => {
       progressBar.style.width = percents + '%';
+      if (percents === 100) {
+        progressBar.classList.add('progress-bar-striped');
+        progressBar.classList.add('progress-bar-animated');
+      }
     })
   }
 
@@ -68,7 +72,7 @@ export class UploaderPlaceholder {
       });
     }
     if (onProgress !== null) {
-      xhr.addEventListener('progress', (e: any) => {
+      xhr.upload.addEventListener('progress', (e: any) => {
         const percentComplete = (e.loaded / e.total) * 100;
         onProgress(percentComplete);
       });

@@ -22,4 +22,9 @@ class Category extends Model
         return $this->morphedByMany(Menu::class, 'categoriable');
     }
 
+    public function morphedRecords($type)
+    {
+        return $this->morphedByMany($type, 'categoriable');
+    }
+
 }

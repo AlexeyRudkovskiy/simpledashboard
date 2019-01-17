@@ -39,15 +39,29 @@ class SimpleRelationField extends EntityField
             $relatedModel = call_user_func($rules, $relatedModel);
         }
 
+        $value = null;
+        $foreignValue = null;
+
         if ($this->getOption('select2') === null) {
             $relatedModel = $relatedModel->get();
+        } else {
+            $relatedFieldName = $this->getOption('config.entity');
+            if ($this->getEntity()->getObject() !== null && $this->getEntity()->getObject()->id !== null) {
+                $value = $this->getEntity()->getObject()->{$relatedFieldName};
+                if ($value !== null) {
+                    $foreignValueName = $this->getOption('config.foreign_field');
+                    $foreignValue = $value->{$foreignValueName};
+                }
+            }
         }
 
         return parent::renderEditable()
             ->with('relation_data', $relatedModel)
             ->with('foreign_field', $this->getForeignField())
             ->with('foreign_key', $this->getForeignKey())
-            ->with('value', $this->getValue());
+            ->with('value', $this->getValue())
+            ->with('select2_value', $value->id ?? null)
+            ->with('select2_text', $foreignValue ?? null);
     }
 
     public function handleRequest(Request $request, $entityObject)

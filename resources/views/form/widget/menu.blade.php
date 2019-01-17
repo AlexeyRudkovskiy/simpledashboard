@@ -9,7 +9,7 @@
             };
         }
         var menuObject = {
-            items: JSON.parse('{!! $items ?? [] !!}'),
+            items: {!! $items ?? [] !!},
             entities: JSON.parse('{!! $menuable ?? [] !!}')
         };
         window.menus['{{ $id ?? $name }}'] = menuObject;

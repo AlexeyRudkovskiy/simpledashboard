@@ -356,12 +356,20 @@
     .wysiwyg-container .wysiwyg-content .post-gallery {
       border: 2px dashed rgba(0, 0, 0, 0.1);
       min-height: 10px; }
+    .wysiwyg-container .wysiwyg-content table tr td, .wysiwyg-container .wysiwyg-content table tr th {
+      border: 1px solid rgba(0, 0, 0, 0.25); }
     .wysiwyg-container .wysiwyg-content .wysiwyg-node.wysiwyg-read-more {
       margin-top: 16px;
       margin-bottom: 16px;
       width: 100%;
       height: 1px;
       background-color: rgba(0, 0, 0, 0.25); }
+    .wysiwyg-container .wysiwyg-content ul {
+      padding-left: 40px; }
+    .wysiwyg-container .wysiwyg-content ul, .wysiwyg-container .wysiwyg-content ul li {
+      list-style: square outside; }
+    .wysiwyg-container .wysiwyg-content ol, .wysiwyg-container .wysiwyg-content ol li {
+      list-style: decimal outside; }
   .wysiwyg-container .wysiwyg-floating-panel {
     position: absolute;
     font-size: 12px;

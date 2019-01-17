@@ -23,6 +23,9 @@ class WYSIWYGField extends EntityField
     public function handleRequest(Request $request, $entityObject)
     {
         $updatedValue = $request->get($this->name);
+        if (empty($updatedValue)) {
+            $updatedValue = '<p>&nbsp;</p>';
+        }
         $matches = null;
         preg_match_all('/( ?)style=\"(([a-zA-Z0-9\;\:\ ]+)| ?)\"/im', $updatedValue, $matches);
         $matches = array_unique($matches[0]);

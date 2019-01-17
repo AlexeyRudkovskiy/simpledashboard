@@ -30,16 +30,22 @@ export class ActionLinkCreate extends AbstractAction {
       for (let i = 0; i < this.selection.rangeCount; i++) {
         const range = this.selection.getRangeAt(i);
         const link = document.createElement('a');
-        link.innerHTML = data.value;
+        const linkContent = document.createTextNode(data.value);
+        link.href = data.href;
+
+        if (link.href.startsWith('http://') || link.href.startsWith('https://') || link.href.startsWith('//')) {
+          link.target = '_blank';
+        }
 
         if (typeof data.title !== "undefined" && data.title !== "undefined" && data.title.length > 0) {
           link.title = data.title;
+        } else {
+          link.title = data.value;
         }
-
-        link.title = data.title;
 
         range.deleteContents();
         range.insertNode(link);
+        link.appendChild(linkContent);
       }
     });
 

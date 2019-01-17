@@ -137,6 +137,14 @@ $hint-text-color: rgba(white, .9);
       min-height: 10px;
     }
 
+    table {
+      tr {
+        td, th {
+          border: 1px solid rgba(black, .25);
+        }
+      }
+    }
+
     .wysiwyg-node {
       &.wysiwyg-read-more {
         margin-top: $default-padding;
@@ -145,6 +153,17 @@ $hint-text-color: rgba(white, .9);
         height: 1px;
         background-color: rgba(black, .25);
       }
+    }
+
+    ul {
+      padding-left: 40px;
+    }
+    ul, ul li {
+      list-style: square outside;
+    }
+
+    ol, ol li {
+      list-style: decimal outside;
     }
 
   }

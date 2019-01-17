@@ -162,7 +162,7 @@ export class FilePopup extends SingletonPopup {
 
       mediaFooter.classList.add('media-footer');
       button.classList.add('btn', 'btn-primary');
-      button.innerHTML = 'Select';
+      button.innerHTML = 'Обрати';
 
       button.addEventListener('click', () => {
         if (this.onFileSelectedCallback !== null) {

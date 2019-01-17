@@ -58,7 +58,9 @@ class MenuField extends EntityField
 
         $baseAppUrl = url('/');
         foreach ($items as $item) {
-            $item->url = str_replace($baseAppUrl, '', $item->url);
+            if (property_exists($item, 'url')) {
+                $item->url = str_replace($baseAppUrl, '', $item->url);
+            }
         }
 
         $menuable = $this->getMenuableEntities();
@@ -84,6 +86,10 @@ class MenuField extends EntityField
             $model = (new $menuable[$item->type])->find($item->id);
             $item->url = $model->getUrl();
             $item->text = $model->getText();
+
+            if (property_exists($item, 'url')) {
+                $item->url = str_replace($baseAppUrl, '', $item->url);
+            }
 
             $items[$key] = $item;
         }

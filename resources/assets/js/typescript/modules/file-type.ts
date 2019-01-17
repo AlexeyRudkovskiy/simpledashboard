@@ -88,6 +88,7 @@ export function fileType() {
 
     previewDelete.addEventListener('click', () => {
       fileType.classList.add('not-selected');
+      hiddenInput.value = null;
     });
 
   }
@@ -107,7 +108,7 @@ function uploadFile(file, complete, progress) {
   uploadXhr.open('POST', '/admin/media', true);
   uploadXhr.setRequestHeader('X-CSRF-TOKEN', (window as any)._csrf_token);
 
-  uploadXhr.addEventListener('progress', (e) => {
+  uploadXhr.upload.addEventListener('progress', (e) => {
     const percentComplete = (e.loaded / e.total) * 100;
     progress.call(window, percentComplete);
   });

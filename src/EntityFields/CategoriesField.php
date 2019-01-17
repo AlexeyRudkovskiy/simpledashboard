@@ -22,6 +22,7 @@ class CategoriesField extends EntityField
 
     public function __construct()
     {
+        parent::__construct();
         $this
             ->setHandleAfterSave(true)
             ->setIsUpdatingManually(true);

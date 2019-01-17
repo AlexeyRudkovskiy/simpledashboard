@@ -39,7 +39,12 @@ class FileField extends EntityField
     {
         $fieldName = $this->getName();
         $fileId = $request->get($fieldName);
-        $entityObject->{$fieldName}()->associate($fileId);
+
+        if ($fileId === null) {
+            $entityObject->{$fieldName}()->dissociate();
+        } else {
+            $entityObject->{$fieldName}()->associate($fileId);
+        }
     }
 
     public function getManuallyUpdatableField()
